@@ -1,0 +1,10 @@
+
+2026-10-07 10:19:14,132 | INFO | __main__ | ℹ️ start project
+2026-10-07 10:29:42,626 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\egyptian-civil-code.pdf
+2026-10-07 10:29:58,038 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-07 10:29:58,097 | INFO | __main__ | english articles extracted ✅ 
+2026-10-07 10:29:58,111 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-07 10:29:58,112 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 10:29:58,114 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 10:29:58,122 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\egyptian-civil-code-ar.json
+2026-10-07 10:29:58,131 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\egyptian-civil-code-en.json

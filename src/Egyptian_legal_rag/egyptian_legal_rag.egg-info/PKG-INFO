@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: egyptian-legal-rag
+Version: 0.1.0
+Requires-Python: >=3.10
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: pydantic
+Requires-Dist: langchain
+Requires-Dist: langchain-community
+Requires-Dist: langchain-groq
+Requires-Dist: langchain-core
+Requires-Dist: faiss-cpu
+Requires-Dist: sentence-transformers
+Requires-Dist: pypdf
+Requires-Dist: mlflow
+Requires-Dist: ragas
+Requires-Dist: dvc
+Requires-Dist: python-dotenv
+Requires-Dist: langdetect
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"
+Requires-Dist: httpx; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"

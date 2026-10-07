@@ -1,0 +1,9 @@
+stages:
+  extract_data:
+    cmd: uv run python src/Egyptian_legal_rag/data/extract.py
+    deps:
+      - data/raw
+      - src/Egyptian_legal_rag/data/extract.py
+    outs:
+      - data/proccessed/egyptian-civil-code-ar.json
+      - data/proccessed/egyptian-civil-code-en.json

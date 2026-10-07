@@ -8,3 +8,35 @@
 2026-10-07 10:29:58,114 | INFO | __main__ | extract articles with metadata ✅
 2026-10-07 10:29:58,122 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\egyptian-civil-code-ar.json
 2026-10-07 10:29:58,131 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\egyptian-civil-code-en.json
+2026-10-07 11:45:19,025 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\raw\egyptian-civil-code.pdf
+2026-10-07 11:45:35,822 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-07 11:45:35,883 | INFO | __main__ | english articles extracted ✅ 
+2026-10-07 11:45:35,900 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-07 11:45:35,902 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 11:45:35,904 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 11:45:35,914 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-07 11:45:35,922 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-07 17:01:03,295 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\raw\egyptian-civil-code.pdf
+2026-10-07 17:01:19,408 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-07 17:01:19,474 | INFO | __main__ | english articles extracted ✅ 
+2026-10-07 17:01:19,491 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-07 17:01:19,494 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 17:01:19,496 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 17:01:19,508 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-07 17:01:19,519 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-07 17:01:37,749 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\raw\egyptian-civil-code.pdf
+2026-10-07 17:01:53,814 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-07 17:01:53,881 | INFO | __main__ | english articles extracted ✅ 
+2026-10-07 17:01:53,897 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-07 17:01:53,899 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 17:01:53,900 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 17:01:53,911 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-07 17:01:53,919 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-07 17:03:32,499 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\raw\egyptian-civil-code.pdf
+2026-10-07 17:03:48,491 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-07 17:03:48,554 | INFO | __main__ | english articles extracted ✅ 
+2026-10-07 17:03:48,576 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-07 17:03:48,578 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 17:03:48,580 | INFO | __main__ | extract articles with metadata ✅
+2026-10-07 17:03:48,592 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-07 17:03:48,604 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json

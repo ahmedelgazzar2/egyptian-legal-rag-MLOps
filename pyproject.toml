@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "egyptian-legal-rag"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "langchain",
+    "langchain-community",
+    "langchain-groq",
+    "langchain-core",
+    "faiss-cpu",
+    "sentence-transformers",
+    "pypdf",
+    "mlflow",
+    "ragas",
+    "dvc",
+    "python-dotenv",
+    "langdetect",
+    "pydantic_settings"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",        
+    "ruff",         
+    "black",        
+    "pre-commit",   
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88

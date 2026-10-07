@@ -12,9 +12,6 @@ from Egyptian_legal_rag.utils.logging_config import setup_logging
 
 logger = logging.getLogger(__name__)
 
-print("Logger level:", logger.level)
-print("Effective level:", logger.getEffectiveLevel())
-
 # Extract text from a PDF file
 
 from pathlib import Path

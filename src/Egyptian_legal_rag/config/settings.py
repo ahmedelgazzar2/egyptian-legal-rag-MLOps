@@ -12,11 +12,11 @@ class Settings(BaseSettings):
 
     # ── Data ──
     DATA_DIR: Path = ROOT_DIR / "data"
-    PDF_DIR: Path = DATA_DIR / "egyptian-civil-code.pdf"
+    PDF_DIR: Path = DATA_DIR / "raw" / "egyptian-civil-code.pdf"
     VECTOR_STORE_AR: Path = DATA_DIR / "vector_store_ar"
     VECTOR_STORE_EN: Path = DATA_DIR / "vector_store_en"
-    JSON_AR: Path = DATA_DIR / "egyptian-civil-code-ar.json"
-    JSON_EN: Path = DATA_DIR / "egyptian-civil-code-en.json"
+    JSON_AR: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-ar.json"
+    JSON_EN: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-en.json"
 
     # ── API Keys ──
     GROQ_API_KEY: str

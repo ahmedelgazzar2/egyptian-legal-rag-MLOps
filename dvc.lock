@@ -1,0 +1,23 @@
+schema: '2.0'
+stages:
+  extract_data:
+    cmd: uv run python src/Egyptian_legal_rag/data/extract.py
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: 81d6d2f6d356fc6c7ab87b288588d606.dir
+      size: 2599703
+      nfiles: 1
+    - path: src/Egyptian_legal_rag/data/extract.py
+      hash: md5
+      md5: e1a1702f2f1952a1dfff8c172d4bf305
+      size: 5905
+    outs:
+    - path: data/proccessed/egyptian-civil-code-ar.json
+      hash: md5
+      md5: 2bdd48501ce57421db16217c86ce9f17
+      size: 472035
+    - path: data/proccessed/egyptian-civil-code-en.json
+      hash: md5
+      md5: 8e2c1b5117eb9440493d1140f6a0c72b
+      size: 447250

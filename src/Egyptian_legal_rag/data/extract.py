@@ -1,11 +1,12 @@
 #extract.py
-from langchain_community.document_loaders import PyPDFLoader
-from Egyptian_legal_rag.config.settings import settings 
-
 import re
 import json
 import logging
+from pathlib import Path
 from Egyptian_legal_rag.utils.logging_config import setup_logging
+
+from langchain_community.document_loaders import PyPDFLoader
+from Egyptian_legal_rag.config.settings import settings 
 
 
 # logger
@@ -14,7 +15,6 @@ logger = logging.getLogger(__name__)
 
 # Extract text from a PDF file
 
-from pathlib import Path
 
 def load_pdf(file_path):
     """Load a PDF file and return its pages."""

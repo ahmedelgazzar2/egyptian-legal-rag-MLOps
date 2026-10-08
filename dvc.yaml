@@ -7,3 +7,14 @@ stages:
     outs:
       - data/proccessed/egyptian-civil-code-ar.json
       - data/proccessed/egyptian-civil-code-en.json
+
+
+  ingest:
+    cmd: python src/Egyptian_legal_rag/data/ingest.py
+    deps:
+      - data/proccessed/egyptian-civil-code-ar.json
+      - data/proccessed/egyptian-civil-code-en.json
+      - src/Egyptian_legal_rag/data/ingest.py
+    outs:
+      - data/vector_store_ar
+      - data/vector_store_en

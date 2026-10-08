@@ -40,3 +40,56 @@
 2026-10-07 17:03:48,580 | INFO | __main__ | extract articles with metadata ✅
 2026-10-07 17:03:48,592 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
 2026-10-07 17:03:48,604 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-08 07:46:25,753 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-08 07:46:25,766 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-08 07:46:25,782 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json with length 997
+2026-10-08 07:46:25,783 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-08 07:46:25,783 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-08 07:46:25,797 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json with length 1070
+2026-10-08 07:46:25,797 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-08 07:46:25,797 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-08 07:46:25,797 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-08 07:46:25,808 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-08 07:46:25,808 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-08 07:46:25,808 | INFO | __main__ | ℹ️ english language detected 
+2026-10-08 07:46:25,809 | INFO | __main__ | 🚀 start converting english json files into documents
+2026-10-08 07:46:25,813 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-08 07:46:25,814 | INFO | __main__ | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-08 07:47:31,793 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-10-08 07:47:32,499 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-08 07:47:32,703 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 07:47:32,704 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-08 07:47:32,744 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-08 07:47:32,954 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 07:47:32,989 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-08 07:47:32,990 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-08 07:47:33,241 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 07:47:33,312 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fconfig_sentence_transformers.json=&etag=%22b974b349cb2d419ada11181750a733ff82f291ad%22 "HTTP/1.1 200 OK"
+2026-10-08 07:47:33,516 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 07:47:33,652 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2FREADME.md=&etag=%226bedb7f3622d56b7020f33ab93f6996d33242043%22 "HTTP/1.1 200 OK"
+2026-10-08 07:47:33,928 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 07:47:33,977 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fmodules.json=&etag=%22f7640f94e81bb7f4f04daf1668850b38763a13d9%22 "HTTP/1.1 200 OK"
+2026-10-08 07:47:34,187 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 07:47:34,251 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2Fsentence_bert_config.json=&etag=%225fd10429389515d3e5cccdeda08cae5fea1ae82e%22 "HTTP/1.1 200 OK"
+2026-10-08 07:47:34,507 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-08 07:47:34,709 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-08 07:47:34,978 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-08 07:47:38,311 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-08 07:47:38,531 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-08 07:47:38,781 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-08 07:47:42,067 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-08 07:47:42,633 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 07:47:42,703 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json?%2Fsentence-transformers%2Fparaphrase-multilingual-MiniLM-L12-v2%2Fresolve%2Fmain%2F1_Pooling%2Fconfig.json=&etag=%22d1514c3162bbe87b343f565fadc62e6c06f04f03%22 "HTTP/1.1 200 OK"
+2026-10-08 07:47:42,947 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-08 07:47:43,123 | INFO | __main__ | ✅ embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-08 07:47:43,124 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-08 07:48:02,970 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-08 07:48:02,972 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-08 07:48:02,972 | INFO | faiss.loader | Loading faiss.
+2026-10-08 07:48:04,488 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-08 07:48:04,683 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-08 07:48:04,693 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-08 07:48:04,695 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en
+2026-10-08 07:48:23,877 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
+2026-10-08 07:48:23,884 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 

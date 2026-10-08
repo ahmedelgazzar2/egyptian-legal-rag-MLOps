@@ -95,7 +95,7 @@ def convert_json_to_docs(articles,lang):
 
 # loading embedding 
 
-def load_embeddings(model_name):
+def load_embeddings(model_name : str):
     """ loading the embedded model  """
     try:
         logger.info(f"🚀 start loading the embedded model {model_name}")
@@ -145,6 +145,9 @@ if __name__ == "__main__":
 
         docs_ar = convert_json_to_docs(arabic_articles,lang='ar')
         docs_en = convert_json_to_docs(english_articles, lang="en")
+        print("arabic document type",docs_ar[0])
+        print("english document type",docs_en[0])
+
 
         embeddings = load_embeddings(settings.EMBEDDING_MODEL)
 

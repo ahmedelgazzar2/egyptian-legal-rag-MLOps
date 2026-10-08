@@ -8,7 +8,6 @@ from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
-# 🚀 ✅ 🔄 ⚠️ ❌ ℹ️
 
 # logger
 
@@ -135,29 +134,6 @@ def Create_vector_store(path,docs,embeddings):
         logger.exception(f"❌failed creating or saving vector store for PATH {path}")
         raise
 
-
-# load vector store
-
-def load_vector_store(path, embeddings):
-    """ loading a vector store """
-
-    try:
-        logger.info(f"🔄 start loading vector store using FAISS for PATH {path}")
-
-        vector_store = FAISS.load_local(
-            path, 
-            embeddings,
-            allow_dangerous_deserialization=True
-        )
-
-        if vector_store:
-            logger.info(f"✅ vector store loaded from PATH {path} ")
-            return vector_store
-        else:
-            logger.warning(f"⚠️ failed loading vector store from PATH {path}")
-    except Exception:
-        logger.exception(f"❌failed to load vector store from PATH {path}")
-        raise
 
 
 if __name__ == "__main__":

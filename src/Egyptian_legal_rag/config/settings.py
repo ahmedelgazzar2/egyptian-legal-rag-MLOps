@@ -27,7 +27,7 @@ class Settings(BaseSettings):
 
     # RAG 
     TOP_K: int = 5
-    SEARCH_TYPE = "similarity"
+    SEARCH_TYPE : str = "similarity"
 
     model_config = {
         "env_file": str(_ROOT / "configs" / ".env"),  # root/configs/.env

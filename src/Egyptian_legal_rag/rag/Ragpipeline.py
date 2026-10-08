@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 
 class RagPipeline:
-    def __init___(self):
+    def __init__(self):
         self.retriever_ar = load_retrieval("ar")
         self.retriever_en = load_retrieval("en")
         self.llm          = load_LLM(settings.LLM_MODEL)
@@ -60,13 +60,13 @@ class RagPipeline:
 
         retriever = self._get_retiever(question)
         docs = retriever.invoke(question)
-        context = self._format_docs(docs)
+        #context = self._format_docs(docs)
 
-        if retriever and docs and context:
+        if not retriever or not docs :
             logger.error("❌ error while loading retriever or docs or context")
 
         chain = (
-            {"context": context | self._format_docs, "input": RunnablePassthrough()}
+            {"context": retriever | self._format_docs, "input": RunnablePassthrough()}
             | self.prompt
             | self.llm
             | StrOutputParser()
@@ -75,7 +75,7 @@ class RagPipeline:
         if chain:
             logger.info("✅ chain created successfully")
 
-        answer = chain.invoke({"context": context, "input": question})
+        answer = chain.invoke({"input": question})
         if answer:
             logger.info("✅ llm generate answer successfully")
 

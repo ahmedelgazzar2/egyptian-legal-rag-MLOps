@@ -5,7 +5,7 @@ from pathlib import Path
 
 from Egyptian_legal_rag.utils.logging_config import setup_logging
 from Egyptian_legal_rag.config.settings import settings 
-from src.Egyptian_legal_rag.data.ingest import load_embeddings
+from Egyptian_legal_rag.data.ingest import load_embeddings
 
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings

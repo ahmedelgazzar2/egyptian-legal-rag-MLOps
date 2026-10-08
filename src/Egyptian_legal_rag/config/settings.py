@@ -7,10 +7,10 @@ _ROOT = _HERE.parent.parent.parent # root
 
 class Settings(BaseSettings):
 
-    # ── Project ──
+    #  Project 
     ROOT_DIR: Path = _ROOT
 
-    # ── Data ──
+    # Data 
     DATA_DIR: Path = ROOT_DIR / "data"
     PDF_DIR: Path = DATA_DIR / "raw" / "egyptian-civil-code.pdf"
     VECTOR_STORE_AR: Path = DATA_DIR / "vector_store_ar"
@@ -18,15 +18,16 @@ class Settings(BaseSettings):
     JSON_AR: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-ar.json"
     JSON_EN: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-en.json"
 
-    # ── API Keys ──
+    #  API Keys 
     GROQ_API_KEY: str
 
-    # ── Models ──
+    # Models
     EMBEDDING_MODEL: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     LLM_MODEL: str = "openai/gpt-oss-20b"
 
-    # ── RAG ──
+    # RAG 
     TOP_K: int = 5
+    SEARCH_TYPE = "similarity"
 
     model_config = {
         "env_file": str(_ROOT / "configs" / ".env"),  # root/configs/.env

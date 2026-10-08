@@ -14,7 +14,6 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 
 logger = logging.getLogger(__name__)
 
-# 🚀 ✅ 🔄 ⚠️ ❌ ℹ️
 
 
 # load vector store
@@ -63,11 +62,10 @@ def load_retrieval(lang : str = 'ar'):
     vector_store = load_vector_store(path,embeddings)
     if vector_store:
         logger.info(f"✅ vector store loaded from PATH {path} ")
-        return vector_store
     else:
         logger.warning(f"⚠️ failed loading vector store from PATH {path}")
 
-    retrieval = vector_store.as_retriever(search_kwargs={"k": 3})
+    retrieval = vector_store.as_retriever(search_type=settings.SEARCH_TYPE,search_kwargs={"k": settings.TOP_K})
 
     if retrieval:
         logger.info(f"✅ return {"arabic" if lang == 'ar' else "english"} retrieval successfully")

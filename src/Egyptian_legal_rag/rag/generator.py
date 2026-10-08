@@ -5,10 +5,7 @@ from Egyptian_legal_rag.config.settings import settings
 
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import StrOutputParser
 
-# 🚀 ✅ 🔄 ⚠️ ❌ ℹ️
 
 # logger
 
@@ -33,7 +30,7 @@ def load_LLM(model):
         logger.exception(f"❌ error , can't load {model}")
 
 
-def get_prompt(context,question) -> str:
+def get_prompt() -> str:
     """ this is a function to get a prompt template """
 
     prompt = ChatPromptTemplate.from_template(
@@ -58,7 +55,7 @@ def get_prompt(context,question) -> str:
             {context}
 
             Question:
-            {input}
+            {question}
 
             Answer:
         """

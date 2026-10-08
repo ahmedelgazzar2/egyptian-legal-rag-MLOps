@@ -14,7 +14,6 @@ from langchain_core.output_parsers import StrOutputParser
 
 logger = logging.getLogger(__name__)
 
-# 🚀 ✅ 🔄 ⚠️ ❌ ℹ️
 
 class RagPipeline:
     def __init___(self):

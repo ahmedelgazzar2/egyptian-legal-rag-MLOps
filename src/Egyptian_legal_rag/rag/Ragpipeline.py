@@ -56,7 +56,7 @@ class RagPipeline:
     #     except Exception:
     #         logger.exception("❌ error , there is an error while returnning chain ")
 
-    def ask(self,question : str) -> dict:
+    async def ask(self,question : str) -> dict:
 
         retriever = self._get_retiever(question)
         docs = retriever.invoke(question)
@@ -75,7 +75,7 @@ class RagPipeline:
         if chain:
             logger.info("✅ chain created successfully")
 
-        answer = chain.invoke({"input": question})
+        answer = await chain.ainvoke(question)
         if answer:
             logger.info("✅ llm generate answer successfully")
 

@@ -68,9 +68,8 @@ def convert_json_to_docs(articles,lang):
             return docs_ar
         logger.warning(f"⚠️ empty arabic documents")
     else:
-        logger.info(f"ℹ️ english language detected ")
-        logger.info(f"🚀 start converting english json files into documents")
         for article in articles:
+
             combined_text = (
                 f"Article {article['article_number']}\n"
                 f"{article['text']}"

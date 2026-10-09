@@ -1,9 +1,9 @@
 # Ragpipeline.py
 import logging 
 from langdetect import detect
-from Egyptian_legal_rag.utils.logging_config import setup_logging
+
 from Egyptian_legal_rag.config.settings import settings 
-from Egyptian_legal_rag.rag.retrieval import load_retrieval
+from Egyptian_legal_rag.rag.retrieval import load_retrieval , load_embeddings , load_vector_store
 from Egyptian_legal_rag.rag.generator import load_LLM , get_prompt
 
 from langchain_core.runnables import RunnablePassthrough
@@ -17,11 +17,22 @@ logger = logging.getLogger(__name__)
 
 class RagPipeline:
     def __init__(self):
-        self.retriever_ar = load_retrieval("ar")
-        self.retriever_en = load_retrieval("en")
-        self.llm          = load_LLM(settings.LLM_MODEL)
-        self.prompt       = get_prompt()
+        self.retriever_ar    = load_retrieval("ar")
+        self.retriever_en    = load_retrieval("en")
+        self.llm             = load_LLM(settings.LLM_MODEL)
+        self.prompt          = get_prompt()
+        self.embeddings      = load_embeddings(settings.EMBEDDING_MODEL)
+        self.vector_store_ar = load_vector_store(settings.VECTOR_STORE_AR,self.embeddings)
+        self.vector_store_en = load_vector_store(settings.VECTOR_STORE_AR,self.embeddings)
 
+    @property
+    def document_count(self) -> int:
+        """ getting the number of indexing documents """
+
+        n_documents = self.vector_store_ar.index.ntotal + self.vector_store_en.index.ntotal
+        return n_documents
+       
+    
     def _get_retiever(self,question : str):
         lang = detect(question)
 

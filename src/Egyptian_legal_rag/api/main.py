@@ -17,7 +17,6 @@ logger = logging.getLogger(__name__)
 
 # rag instance
 
-
 rag_pipeline = RagPipeline()
 
 
@@ -69,6 +68,7 @@ class AskResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     status: str
+    documents_indexed: int
 
 
 # APIs
@@ -84,7 +84,10 @@ def read_root():
 def health():
     logger.info("✅ Health check requested")
 
-    return HealthResponse(status = "healthy")
+    return HealthResponse(
+        status = "healthy",
+        documents_indexed=rag_pipeline.document_count
+        )
 
 
 

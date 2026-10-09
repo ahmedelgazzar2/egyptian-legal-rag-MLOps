@@ -9,6 +9,7 @@ Requires-Dist: langchain
 Requires-Dist: langchain-community
 Requires-Dist: langchain-groq
 Requires-Dist: langchain-core
+Requires-Dist: langchain-huggingface
 Requires-Dist: faiss-cpu
 Requires-Dist: sentence-transformers
 Requires-Dist: pypdf

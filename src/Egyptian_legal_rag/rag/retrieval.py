@@ -8,7 +8,6 @@ from Egyptian_legal_rag.config.settings import settings
 from Egyptian_legal_rag.data.ingest import load_embeddings
 
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
 
 # logger
 

@@ -62,7 +62,7 @@ class AskRequest(BaseModel):
 
 class AskResponse(BaseModel):
     answer : str 
-    sources : list[dict]
+    sources : list[str]
 
 
 ###  HealthResponse model
@@ -111,7 +111,8 @@ async def ask(request: AskRequest):
     
     except Exception:
         logger.exception("❌ Failed to process question")
-        raise HTTPException(
-            status_code=500,
-            detail="Failed to process the question"
-        )
+        raise
+        # raise HTTPException(
+        #     status_code=500,
+        #     detail="Failed to process the question"
+        # )

@@ -99,7 +99,17 @@ def load_embeddings(model_name : str):
     try:
         logger.info(f"🚀 start loading the embedded model {model_name}")
 
-        embeddings = HuggingFaceEmbeddings(model_name=model_name)
+        embeddings = HuggingFaceEmbeddings(
+            model_name=model_name,
+            model_kwargs={
+                "device": "cpu",
+                "backend": "onnx"  # using onnx runtime to make image smaller
+            },
+            encode_kwargs={
+                "normalize_embeddings": True
+            },
+            cache_folder="./data/models_cache" # save cache in data
+        )
 
         if embeddings:
             logger.info(f"✅ embedded model {model_name} loaded ")

@@ -19,6 +19,7 @@ Requires-Dist: dvc
 Requires-Dist: python-dotenv
 Requires-Dist: langdetect
 Requires-Dist: pydantic_settings
+Requires-Dist: optimum[onnxruntime]>=2.1.0
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: pytest-asyncio; extra == "dev"

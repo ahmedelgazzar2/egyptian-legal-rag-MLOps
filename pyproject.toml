@@ -24,6 +24,7 @@ dependencies = [
     "python-dotenv",
     "langdetect",
     "pydantic_settings",
+    "optimum[onnxruntime]>=2.1.0",
 ]
 
 [project.optional-dependencies]

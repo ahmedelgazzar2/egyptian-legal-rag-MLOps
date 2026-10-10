@@ -23,7 +23,7 @@ dependencies = [
     "dvc",
     "python-dotenv",
     "langdetect",
-    "pydantic_settings"
+    "pydantic_settings",
 ]
 
 [project.optional-dependencies]

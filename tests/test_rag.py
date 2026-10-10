@@ -4,6 +4,7 @@ from fastapi.testclient import TestClient
 from unittest.mock import MagicMock , AsyncMock, patch
 from Egyptian_legal_rag.api.main import app
 
+from Egyptian_legal_rag.rag.retrieval import load_retrieval
 
 # Fixtures & Mocks
 
@@ -47,7 +48,7 @@ def test_health_endpoint(client):
     assert data['documents_indexed'] == 1994
 
 
-def test_ask_arabic(client,mock_rag):
+def test_ask_arabic(client):
     response = client.post("/ask",json={"question": "ما هي شروط العقد؟"})
     assert response.status_code == 200
 
@@ -57,7 +58,7 @@ def test_ask_arabic(client,mock_rag):
     assert "sources" in data
 
 
-def test_ask_english(client,mock_rag):
+def test_ask_english(client):
     response = client.post("/ask",json={"question": "What are contract conditions?"})
     assert response.status_code == 200
 
@@ -80,3 +81,44 @@ def test_ask_whitespace_question(client):
 def test_ask_missing_question(client):
     response = client.post("/ask", json={})
     assert response.status_code == 422
+
+
+### integration test
+
+
+#####  test retrieval
+
+def test_ar_retriever_returns():
+    """ this is a function to test the documents return from retriever for arabic questions """
+    retriever = load_retrieval('ar')
+
+    docs = retriever.invoke("ما هي شروط صحة العقد؟")
+
+    assert len(docs) > 0
+    assert all(
+        isinstance(doc.page_content, str)
+        for doc in docs
+    )
+
+    assert all(
+        "article_number" in doc.metadata
+        for doc in docs
+    )
+
+
+def test_en_retriever_returns():
+    """ this is a function to test the documents return from retriever for english questions """
+    retriever = load_retrieval('en')
+
+    docs = retriever.invoke("What are contract conditions?")
+
+    assert len(docs) > 0
+    assert all(
+        isinstance(doc.page_content, str)
+        for doc in docs
+    )
+
+    assert all(
+        "article_number" in doc.metadata
+        for doc in docs
+    )

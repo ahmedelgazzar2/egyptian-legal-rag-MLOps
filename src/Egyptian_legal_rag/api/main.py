@@ -1,6 +1,7 @@
 # main.py
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException , Depends
 from pydantic import BaseModel, Field , field_validator
+from contextlib import asynccontextmanager
 
 from Egyptian_legal_rag.config.settings import Settings
 from Egyptian_legal_rag.rag.Ragpipeline import RagPipeline
@@ -14,16 +15,34 @@ setup_logging()
 
 logger = logging.getLogger(__name__)
 
-
-# rag instance
+# Global instance
 
 rag_pipeline = RagPipeline()
+
+# life span
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global rag_pipeline
+
+    rag_pipeline = RagPipeline()
+
+    yield
+
+    rag_pipeline = None
+
+
+#  Dependency 
+
+def get_rag_pipeline() -> RagPipeline:
+    return rag_pipeline
 
 
 app = FastAPI(
     title="Egyptian Legal RAG API",
     description="RAG API for querying the Egyptian Civil Code",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
 
 
@@ -81,12 +100,12 @@ def read_root():
 ### health API
 
 @app.get("/health",response_model=HealthResponse)
-def health():
+def health(rag : RagPipeline = Depends(get_rag_pipeline)):
     logger.info("✅ Health check requested")
 
     return HealthResponse(
         status = "healthy",
-        documents_indexed=rag_pipeline.document_count
+        documents_indexed=rag.document_count
         )
 
 
@@ -94,7 +113,7 @@ def health():
 ### Ask API
 
 @app.post("/ask", response_model=AskResponse)
-async def ask(request: AskRequest):
+async def ask(request: AskRequest , rag : RagPipeline = Depends(get_rag_pipeline)):
 
 
     try:
@@ -102,7 +121,7 @@ async def ask(request: AskRequest):
 
         logger.info("ℹ️ recieve a question")
 
-        result = await rag_pipeline.ask(question)
+        result = await rag.ask(question)
 
         if result:
             logger.info("✅ recieve a question")

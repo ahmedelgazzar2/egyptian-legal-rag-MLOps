@@ -4,7 +4,7 @@
 
 FROM python:3.11-slim AS builder
 
-# install uv 
+# install official uv 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 WORKDIR /app
@@ -19,17 +19,16 @@ ENV PYTHONUNBUFFERED=1 \
 COPY pyproject.toml uv.lock ./
 
 # install dependencies without (dev dependencies)
-RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --no-dev --no-install-project
+RUN uv sync --frozen --no-dev --no-install-project --no-editable && \
+    rm -rf /root/.cache/uv
 
 # cope source code
 COPY src/ ./src/
 COPY README.md ./
 
 # install project inside environment variable
-RUN --mount=type=cache,target=/root/.cache/uv \
-    uv sync --frozen --no-dev
-
+RUN uv sync --frozen --no-dev --no-editable && \
+    rm -rf /root/.cache/uv
 
 # ==========================================
 # Stage 2: Runtime Image (Minimal & Secure)

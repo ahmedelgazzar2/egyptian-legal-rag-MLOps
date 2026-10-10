@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  legal-rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: egyptian_legal_rag_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      # 🔴 ربط مجلد data المحلي بمجلد /app/data داخل الحاوية
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+      # يمكنك إضافة أي متغيرات بيئة إضافية هنا مستقبلاً
+      # - OPENAI_API_KEY=${OPENAI_API_KEY}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

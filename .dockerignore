@@ -1,0 +1,73 @@
+# ==========================================
+# 1. environment variables
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ==========================================
+# 2. (uv/pip) build tools
+# ==========================================
+.uv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# 3. test code
+# ==========================================
+tests/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.nox/
+.tox/
+coverage.xml
+
+# ==========================================
+# 4.(IDE & Git)
+# ==========================================
+.git/
+.gitignore
+.github/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==========================================
+# 5. (Secrets)
+# ==========================================
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ==========================================
+# 6. temp files inside (data)
+# ==========================================
+data/**/*.tmp
+data/**/*.log
+
+# ==========================================
+# 7. logs and Documentation files
+# ==========================================
+*.md
+!README.md
+*.log
+tmp/
+temp/

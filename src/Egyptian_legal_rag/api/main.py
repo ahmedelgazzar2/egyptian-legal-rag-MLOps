@@ -15,9 +15,11 @@ setup_logging()
 
 logger = logging.getLogger(__name__)
 
+
 # Global instance
 
 rag_pipeline = RagPipeline()
+
 
 # life span
 
@@ -46,8 +48,8 @@ app = FastAPI(
 )
 
 
-# Request / Response Models
 
+# Request / Response Models
 
 ### question model
 

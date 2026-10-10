@@ -37,7 +37,7 @@ def client(mock_rag):
 ### Unit tests
 
 def test_health_endpoint(client):
-    """ this is a function to test the api health endpoint """
+    """ this is a function to test the api health endpoint ( data['status'] == "healthy" , "documents_indexed" in data , data['documents_indexed'] == 1994 , status_code == 200 ) """
     response = client.get("/health")
     assert response.status_code == 200
 
@@ -49,6 +49,7 @@ def test_health_endpoint(client):
 
 
 def test_ask_arabic(client):
+    """ it is a function to test arabic questions ( "answer" in data , "sources" in data , status_code == 200 ) """
     response = client.post("/ask",json={"question": "ما هي شروط العقد؟"})
     assert response.status_code == 200
 
@@ -59,6 +60,7 @@ def test_ask_arabic(client):
 
 
 def test_ask_english(client):
+    """ it is a function to test english questions test ( "answer" in data , "sources" in data , status_code == 200 ) """
     response = client.post("/ask",json={"question": "What are contract conditions?"})
     assert response.status_code == 200
 
@@ -69,16 +71,19 @@ def test_ask_english(client):
 
 
 def test_ask_empty_question(client):
+    """ it is a function to test empty questions (status_code == 442) """
     response = client.post("/ask",json={"question": ""})
     assert response.status_code == 422
 
 
 def test_ask_whitespace_question(client):
+    """ it is a function to test whitespace questions (status_code == 442) """
     response = client.post("/ask", json={"question": "   "})
     assert response.status_code == 422
 
 
 def test_ask_missing_question(client):
+    """ it is a function to test missing questions (status_code == 442) """
     response = client.post("/ask", json={})
     assert response.status_code == 422
 
@@ -89,7 +94,7 @@ def test_ask_missing_question(client):
 #####  test retrieval
 
 def test_ar_retriever_returns():
-    """ this is a function to test the documents return from retriever for arabic questions """
+    """ this is a function to test the documents return from retriever for arabic questions (test len(docs) > 0 , doc.page_content is string ,"article_number" in doc.metadata ) """
     retriever = load_retrieval('ar')
 
     docs = retriever.invoke("ما هي شروط صحة العقد؟")
@@ -107,7 +112,7 @@ def test_ar_retriever_returns():
 
 
 def test_en_retriever_returns():
-    """ this is a function to test the documents return from retriever for english questions """
+    """ this is a function to test the documents return from retriever for english questions (test len(docs) > 0 , doc.page_content is string ,"article_number" in doc.metadata ) """
     retriever = load_retrieval('en')
 
     docs = retriever.invoke("What are contract conditions?")

@@ -10128,3 +10128,430 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-10-10 18:34:51,798 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
 2026-10-10 18:34:51,798 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
 2026-10-10 18:34:51,798 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-11 09:27:04,871 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 09:27:04,892 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 09:27:38,101 | ERROR | Egyptian_legal_rag.data.ingest | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 09:38:30,862 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 09:38:30,869 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 09:38:54,014 | ERROR | Egyptian_legal_rag.data.ingest | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 10:01:17,290 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:01:17,299 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:02:10,427 | ERROR | Egyptian_legal_rag.data.ingest | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 10:04:14,278 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:04:14,282 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:04:31,261 | ERROR | Egyptian_legal_rag.data.ingest | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 10:05:23,062 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:05:23,062 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:05:47,915 | ERROR | Egyptian_legal_rag.data.ingest | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "C:\Users\AlrassPOS\AppData\Local\uv\cache\builds-v0\.tmpHPRg6k\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 10:08:16,406 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:08:16,419 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:08:33,483 | ERROR | Egyptian_legal_rag.data.ingest | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 10:08:55,434 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-11 10:08:55,434 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-11 10:08:55,451 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json with length 997
+2026-10-11 10:08:55,451 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-11 10:08:55,451 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-11 10:08:55,466 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json with length 1070
+2026-10-11 10:08:55,466 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-11 10:08:55,466 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-11 10:08:55,466 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-11 10:08:55,470 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-11 10:08:55,470 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-11 10:08:55,479 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-11 10:08:55,479 | INFO | __main__ | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:09:09,015 | ERROR | __main__ | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Traceback (most recent call last):
+  File "d:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 10:09:09,089 | ERROR | __main__ | ❌failed to ingest data
+Traceback (most recent call last):
+  File "d:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 161, in <module>
+    embeddings = load_embeddings(settings.EMBEDDING_MODEL)
+  File "d:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\src\Egyptian_legal_rag\data\ingest.py", line 102, in load_embeddings
+    embeddings = HuggingFaceEmbeddings(
+        model_name=model_name,
+    ...<7 lines>...
+        cache_folder="./data/models_cache" # save cache in data
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 60, in __init__
+    import sentence_transformers  # type: ignore[import]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\__init__.py", line 15, in <module>
+    from sentence_transformers.base.sampler import DefaultBatchSampler, MultiDatasetDefaultBatchSampler
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\__init__.py", line 4, in <module>
+    from .model import BaseModel
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model.py", line 32, in <module>
+    from sentence_transformers.base.model_card import BaseModelCardData, generate_model_card
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\model_card.py", line 34, in <module>
+    from sentence_transformers.base.training_args import BaseTrainingArguments
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\training_args.py", line 14, in <module>
+    from sentence_transformers.base.sampler import (
+    ...<4 lines>...
+    )
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\sentence_transformers\base\sampler.py", line 24, in <module>
+    from datasets import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\__init__.py", line 22, in <module>
+    from .arrow_dataset import Dataset
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_dataset.py", line 67, in <module>
+    from .arrow_writer import ArrowWriter, OptimizedTypedSequence
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\arrow_writer.py", line 27, in <module>
+    from .features import Features, Image, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\__init__.py", line 18, in <module>
+    from .features import Array2D, Array3D, Array4D, Array5D, ClassLabel, Features, Sequence, Value
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\.venv\Lib\site-packages\datasets\features\features.py", line 634, in <module>
+    class _ArrayXDExtensionType(pa.PyExtensionType):
+                                ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'pyarrow' has no attribute 'PyExtensionType'. Did you mean: 'ExtensionType'?
+2026-10-11 10:13:18,845 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-11 10:13:18,846 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json
+2026-10-11 10:13:18,860 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-ar.json with length 997
+2026-10-11 10:13:18,860 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-11 10:13:18,861 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json
+2026-10-11 10:13:18,874 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\proccessed\egyptian-civil-code-en.json with length 1070
+2026-10-11 10:13:18,874 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-11 10:13:18,874 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-11 10:13:18,874 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-11 10:13:18,878 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-11 10:13:18,878 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-11 10:13:18,884 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-11 10:13:18,884 | INFO | __main__ | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:13:38,487 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 10:13:41,943 | WARNING | sentence_transformers.backend.utils | Multiple ONNX files found in 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2': ['onnx/model.onnx', 'onnx/model_O1.onnx', 'onnx/model_O2.onnx', 'onnx/model_O3.onnx', 'onnx/model_O4.onnx', 'onnx/model_qint8_arm64.onnx', 'onnx/model_qint8_avx512.onnx', 'onnx/model_qint8_avx512_vnni.onnx', 'onnx/model_quint8_avx2.onnx'], defaulting to 'onnx/model.onnx'. Please specify the desired file name via `model_kwargs={"file_name": "<file_name>"}`.
+2026-10-11 10:13:42,957 | WARNING | huggingface_hub.file_download | Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2026-10-11 10:16:40,425 | WARNING | huggingface_hub.file_download | Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2026-10-11 10:16:47,078 | INFO | __main__ | ✅ embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-11 10:16:47,079 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-11 10:17:09,401 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-11 10:17:09,403 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-11 10:17:09,403 | INFO | faiss.loader | Loading faiss.
+2026-10-11 10:17:11,087 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-11 10:17:11,422 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:17:11,454 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:17:11,456 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en
+2026-10-11 10:17:32,966 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
+2026-10-11 10:17:32,976 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
+2026-10-11 10:18:01,425 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:18:01,425 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:18:22,022 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 10:18:24,364 | WARNING | sentence_transformers.backend.utils | Multiple ONNX files found in 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2': ['onnx/model.onnx', 'onnx/model_O1.onnx', 'onnx/model_O2.onnx', 'onnx/model_O3.onnx', 'onnx/model_O4.onnx', 'onnx/model_qint8_arm64.onnx', 'onnx/model_qint8_avx512.onnx', 'onnx/model_qint8_avx512_vnni.onnx', 'onnx/model_quint8_avx2.onnx'], defaulting to 'onnx/model.onnx'. Please specify the desired file name via `model_kwargs={"file_name": "<file_name>"}`.
+2026-10-11 10:18:32,476 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-11 10:18:32,476 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-11 10:18:32,476 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-11 10:18:32,476 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-11 10:18:32,476 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-11 10:18:32,479 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-11 10:18:32,479 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-11 10:18:32,479 | INFO | faiss.loader | Loading faiss.
+2026-10-11 10:18:32,710 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-11 10:18:32,732 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:18:32,732 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:18:32,746 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-11 10:18:32,746 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:18:32,746 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:18:33,208 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 10:18:34,994 | WARNING | sentence_transformers.backend.utils | Multiple ONNX files found in 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2': ['onnx/model.onnx', 'onnx/model_O1.onnx', 'onnx/model_O2.onnx', 'onnx/model_O3.onnx', 'onnx/model_O4.onnx', 'onnx/model_qint8_arm64.onnx', 'onnx/model_qint8_avx512.onnx', 'onnx/model_qint8_avx512_vnni.onnx', 'onnx/model_quint8_avx2.onnx'], defaulting to 'onnx/model.onnx'. Please specify the desired file name via `model_kwargs={"file_name": "<file_name>"}`.
+2026-10-11 10:18:42,846 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-11 10:18:42,846 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-11 10:18:42,846 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-11 10:18:42,847 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en
+2026-10-11 10:18:42,847 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en
+2026-10-11 10:18:42,854 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
+2026-10-11 10:18:42,854 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
+2026-10-11 10:18:42,854 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return english retrieval successfully
+2026-10-11 10:18:42,855 | INFO | Egyptian_legal_rag.rag.generator | 🔄 openai/gpt-oss-20b loading 
+2026-10-11 10:18:44,501 | INFO | Egyptian_legal_rag.rag.generator | ✅ openai/gpt-oss-20b loaded successfully
+2026-10-11 10:18:44,517 | INFO | Egyptian_legal_rag.rag.generator | ✅ return prompt template 
+2026-10-11 10:18:44,517 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:18:45,052 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 10:18:46,698 | WARNING | sentence_transformers.backend.utils | Multiple ONNX files found in 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2': ['onnx/model.onnx', 'onnx/model_O1.onnx', 'onnx/model_O2.onnx', 'onnx/model_O3.onnx', 'onnx/model_O4.onnx', 'onnx/model_qint8_arm64.onnx', 'onnx/model_qint8_avx512.onnx', 'onnx/model_qint8_avx512_vnni.onnx', 'onnx/model_quint8_avx2.onnx'], defaulting to 'onnx/model.onnx'. Please specify the desired file name via `model_kwargs={"file_name": "<file_name>"}`.
+2026-10-11 10:18:56,371 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-11 10:18:56,376 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-11 10:18:56,465 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:18:56,465 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-11 10:18:56,470 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:18:58,433 | INFO | Egyptian_legal_rag.api.main | ✅ Health check requested
+2026-10-11 10:18:58,472 | INFO | httpx2 | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-10-11 10:18:58,572 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-11 10:18:58,572 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-11 10:18:58,574 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-11 10:18:58,586 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-11 10:18:58,587 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-11 10:18:58,587 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-11 10:18:58,602 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-11 10:18:58,617 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-11 10:18:58,629 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-11 10:18:58,635 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:18:58,635 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:18:59,116 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 10:19:00,804 | WARNING | sentence_transformers.backend.utils | Multiple ONNX files found in 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2': ['onnx/model.onnx', 'onnx/model_O1.onnx', 'onnx/model_O2.onnx', 'onnx/model_O3.onnx', 'onnx/model_O4.onnx', 'onnx/model_qint8_arm64.onnx', 'onnx/model_qint8_avx512.onnx', 'onnx/model_qint8_avx512_vnni.onnx', 'onnx/model_quint8_avx2.onnx'], defaulting to 'onnx/model.onnx'. Please specify the desired file name via `model_kwargs={"file_name": "<file_name>"}`.
+2026-10-11 10:19:09,120 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-11 10:19:09,121 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-11 10:19:09,122 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-11 10:19:09,122 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-11 10:19:09,122 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar
+2026-10-11 10:19:09,540 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:19:09,540 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
+2026-10-11 10:19:09,558 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-11 10:19:10,656 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-11 10:19:10,657 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-11 10:19:11,126 | INFO | sentence_transformers.base.model | Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+2026-10-11 10:19:12,882 | WARNING | sentence_transformers.backend.utils | Multiple ONNX files found in 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2': ['onnx/model.onnx', 'onnx/model_O1.onnx', 'onnx/model_O2.onnx', 'onnx/model_O3.onnx', 'onnx/model_O4.onnx', 'onnx/model_qint8_arm64.onnx', 'onnx/model_qint8_avx512.onnx', 'onnx/model_qint8_avx512_vnni.onnx', 'onnx/model_quint8_avx2.onnx'], defaulting to 'onnx/model.onnx'. Please specify the desired file name via `model_kwargs={"file_name": "<file_name>"}`.
+2026-10-11 10:19:20,408 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-11 10:19:20,408 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-11 10:19:20,408 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-11 10:19:20,408 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en
+2026-10-11 10:19:20,409 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en
+2026-10-11 10:19:20,413 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
+2026-10-11 10:19:20,413 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
+2026-10-11 10:19:20,413 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return english retrieval successfully

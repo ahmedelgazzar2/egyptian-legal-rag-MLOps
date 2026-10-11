@@ -35,8 +35,6 @@ def load_json(path):
         logger.exception(f"❌ error , can't load file from {path}")
 
 
-
-
 # convert json to documents
 
 def convert_json_to_docs(articles,lang):

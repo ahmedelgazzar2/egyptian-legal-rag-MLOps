@@ -17,12 +17,14 @@ class Settings(BaseSettings):
     VECTOR_STORE_EN: Path = DATA_DIR / "vector_store_en"
     JSON_AR: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-ar.json"
     JSON_EN: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-en.json"
+    EMBEDDING_MODEL: str = "./data/onnx_model"
 
     #  API Keys 
     GROQ_API_KEY: str
 
     # Models
     EMBEDDING_MODEL: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    # EMBEDDING_MODEL: str = DATA_DIR / "onnx_model"
     LLM_MODEL: str = "openai/gpt-oss-20b"
 
     # RAG 

@@ -23,6 +23,8 @@ Requires-Dist: optimum[onnxruntime]>=2.1.0
 Requires-Dist: pyarrow>=16.0.0
 Requires-Dist: onnxruntime>=1.24.3
 Requires-Dist: datasets>=2.20.0
+Requires-Dist: accelerate>=1.15.0
+Requires-Dist: fastembed
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: pytest-asyncio; extra == "dev"

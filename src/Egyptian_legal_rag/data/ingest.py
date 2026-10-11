@@ -6,7 +6,8 @@ from Egyptian_legal_rag.config.settings import settings
 
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
-from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 
 
 # logger
@@ -95,29 +96,19 @@ def convert_json_to_docs(articles,lang):
 # loading embedding 
 
 def load_embeddings(model_name : str):
-    """ loading the embedded model  """
+    """ Loading the embedded model from a local ONNX model directory  """
     try:
-        logger.info(f"🚀 start loading the embedded model {model_name}")
+        logger.info(f"🚀 start loading the embedded model in path {model_name}")
 
-        embeddings = HuggingFaceEmbeddings(
-            model_name=model_name,
-            model_kwargs={
-                "device": "cpu",
-                "backend": "onnx"  # using onnx runtime to make image smaller
-            },
-            encode_kwargs={
-                "normalize_embeddings": True
-            },
-            cache_folder="./data/models_cache" # save cache in data
-        )
+        embeddings = FastEmbedEmbeddings(model_name=model_name,)
 
         if embeddings:
-            logger.info(f"✅ embedded model {model_name} loaded ")
+            logger.info(f"✅ embedded model in path {model_name} loaded ")
             return embeddings
         
-        logger.warning(f"⚠️ i can't load embedded model {model_name}")
+        logger.warning(f"⚠️ i can't load embedded model from path {model_name}")
     except Exception:
-        logger.exception(f"error when loading embedded model {model_name}")
+        logger.exception(f"error when loading embedded model from path {model_name}")
         raise
 
 

@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     SEARCH_TYPE : str = "similarity"
 
     model_config = {
-        "env_file": str(_ROOT / "configs" / ".env"),  # root/configs/.env
+        "env_file": str(_ROOT / ".env"),  # root/configs/.env
         "env_file_encoding": "utf-8",
     }
 

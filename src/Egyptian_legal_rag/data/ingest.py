@@ -1,14 +1,14 @@
 import json
 import logging
 from pathlib import Path
-from Egyptian_legal_rag.utils.logging_config import setup_logging
-from Egyptian_legal_rag.config.settings import settings 
 
-from langchain_core.documents import Document
-from langchain_community.vectorstores import FAISS
 # from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
 
+from Egyptian_legal_rag.config.settings import settings
+from Egyptian_legal_rag.utils.logging_config import setup_logging
 
 # logger
 
@@ -29,7 +29,7 @@ def load_json(path):
             logger.info(f"✅ json file loaded well from {path} with length {len(articles)}")
             return articles
         
-        logger.warning(f"⚠️ empty file")
+        logger.warning("⚠️ empty file")
     
     except Exception:
         logger.exception(f"❌ error , can't load file from {path}")
@@ -39,13 +39,13 @@ def load_json(path):
 
 def convert_json_to_docs(articles,lang):
     """function to detect your article language and convert json to documents"""
-    logger.info(f"🚀 starting converting json file to documents")
+    logger.info("🚀 starting converting json file to documents")
     docs_ar = []
     doc_en = []
 
     if lang == "ar":
-        logger.info(f"ℹ️ arabic language detected ")
-        logger.info(f"🚀 start converting arabic json files into documents")
+        logger.info("ℹ️ arabic language detected ")
+        logger.info("🚀 start converting arabic json files into documents")
         for article in articles:
             combined_text = (
                 f"مادة {article['article_number']}\n"
@@ -63,9 +63,9 @@ def convert_json_to_docs(articles,lang):
 
             docs_ar.append(doc)
         if docs_ar:  
-            logger.info(f"✅ arabic json file converted into documents")
+            logger.info("✅ arabic json file converted into documents")
             return docs_ar
-        logger.warning(f"⚠️ empty arabic documents")
+        logger.warning("⚠️ empty arabic documents")
     else:
         for article in articles:
 
@@ -86,9 +86,9 @@ def convert_json_to_docs(articles,lang):
             doc_en.append(doc)
 
         if doc_en:  
-            logger.info(f"✅ english json file converted into documents")
+            logger.info("✅ english json file converted into documents")
             return doc_en
-        logger.warning(f"⚠️ empty english documents")
+        logger.warning("⚠️ empty english documents")
 
 
 # loading embedding 
@@ -153,4 +153,4 @@ if __name__ == "__main__":
         Create_vector_store(settings.VECTOR_STORE_EN,docs_en,embeddings)
 
     except Exception:
-        logger.exception(f"❌failed to ingest data")
+        logger.exception("❌failed to ingest data")

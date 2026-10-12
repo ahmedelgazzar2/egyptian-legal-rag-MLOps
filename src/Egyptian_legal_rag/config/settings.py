@@ -1,5 +1,6 @@
 #src/Egyptian_legal_rag/config/settings.py
 from pathlib import Path
+
 from pydantic_settings import BaseSettings
 
 _HERE = Path(__file__).resolve().parent  # config/

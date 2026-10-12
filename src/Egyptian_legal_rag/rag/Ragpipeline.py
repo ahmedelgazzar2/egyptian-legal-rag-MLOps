@@ -1,14 +1,17 @@
 # Ragpipeline.py
-import logging 
+import logging
+
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
 from langdetect import detect
 
-from Egyptian_legal_rag.config.settings import settings 
-from Egyptian_legal_rag.rag.retrieval import load_retrieval , load_embeddings , load_vector_store
-from Egyptian_legal_rag.rag.generator import load_LLM , get_prompt
-
-from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import StrOutputParser
-
+from Egyptian_legal_rag.config.settings import settings
+from Egyptian_legal_rag.rag.generator import get_prompt, load_LLM
+from Egyptian_legal_rag.rag.retrieval import (
+    load_embeddings,
+    load_retrieval,
+    load_vector_store,
+)
 
 # logger
 

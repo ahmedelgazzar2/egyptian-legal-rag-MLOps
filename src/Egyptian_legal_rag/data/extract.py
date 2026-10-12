@@ -1,13 +1,13 @@
 #extract.py
-import re
 import json
 import logging
+import re
 from pathlib import Path
-from Egyptian_legal_rag.utils.logging_config import setup_logging
 
 from langchain_community.document_loaders import PyPDFLoader
-from Egyptian_legal_rag.config.settings import settings 
 
+from Egyptian_legal_rag.config.settings import settings
+from Egyptian_legal_rag.utils.logging_config import setup_logging
 
 # logger
 

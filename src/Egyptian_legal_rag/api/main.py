@@ -1,14 +1,12 @@
 # main.py
-from fastapi import FastAPI, HTTPException , Depends
-from pydantic import BaseModel, Field , field_validator
+import logging
 from contextlib import asynccontextmanager
 
-from Egyptian_legal_rag.config.settings import Settings
+from fastapi import Depends, FastAPI, HTTPException
+from pydantic import BaseModel, Field, field_validator
+
 from Egyptian_legal_rag.rag.Ragpipeline import RagPipeline
 from Egyptian_legal_rag.utils.logging_config import setup_logging
-
-import logging
-
 
 # logger
 setup_logging()

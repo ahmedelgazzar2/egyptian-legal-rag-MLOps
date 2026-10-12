@@ -1,4 +1,19 @@
 # Ragpipeline.py
+<<<<<<< HEAD
+import logging
+
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from langdetect import detect
+
+from Egyptian_legal_rag.config.settings import settings
+from Egyptian_legal_rag.rag.generator import get_prompt, load_LLM
+from Egyptian_legal_rag.rag.retrieval import (
+    load_embeddings,
+    load_retrieval,
+    load_vector_store,
+)
+=======
 import logging 
 from langdetect import detect
 
@@ -9,6 +24,7 @@ from Egyptian_legal_rag.rag.generator import load_LLM , get_prompt
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 
 # logger
 

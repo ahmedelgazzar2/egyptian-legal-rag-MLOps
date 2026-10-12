@@ -25,6 +25,11 @@ dependencies = [
     "langdetect",
     "pydantic_settings",
     "optimum[onnxruntime]>=2.1.0",
+    "pyarrow>=16.0.0",
+    "onnxruntime>=1.24.3",
+    "datasets>=2.20.0",
+    "accelerate>=1.15.0",
+    "fastembed",
 ]
 
 [project.optional-dependencies]
@@ -42,3 +47,9 @@ where = ["src"]
 
 [tool.ruff]
 line-length = 88
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
+]

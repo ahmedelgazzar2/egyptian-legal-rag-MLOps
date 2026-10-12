@@ -1,6 +1,16 @@
 import json
 import logging
 from pathlib import Path
+<<<<<<< HEAD
+
+# from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
+
+from Egyptian_legal_rag.config.settings import settings
+from Egyptian_legal_rag.utils.logging_config import setup_logging
+=======
 from Egyptian_legal_rag.utils.logging_config import setup_logging
 from Egyptian_legal_rag.config.settings import settings 
 
@@ -8,6 +18,7 @@ from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 
 # logger
 
@@ -28,25 +39,41 @@ def load_json(path):
             logger.info(f"✅ json file loaded well from {path} with length {len(articles)}")
             return articles
         
+<<<<<<< HEAD
+        logger.warning("⚠️ empty file")
+=======
         logger.warning(f"⚠️ empty file")
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
     
     except Exception:
         logger.exception(f"❌ error , can't load file from {path}")
 
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 # convert json to documents
 
 def convert_json_to_docs(articles,lang):
     """function to detect your article language and convert json to documents"""
+<<<<<<< HEAD
+    logger.info("🚀 starting converting json file to documents")
+=======
     logger.info(f"🚀 starting converting json file to documents")
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
     docs_ar = []
     doc_en = []
 
     if lang == "ar":
+<<<<<<< HEAD
+        logger.info("ℹ️ arabic language detected ")
+        logger.info("🚀 start converting arabic json files into documents")
+=======
         logger.info(f"ℹ️ arabic language detected ")
         logger.info(f"🚀 start converting arabic json files into documents")
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
         for article in articles:
             combined_text = (
                 f"مادة {article['article_number']}\n"
@@ -64,9 +91,15 @@ def convert_json_to_docs(articles,lang):
 
             docs_ar.append(doc)
         if docs_ar:  
+<<<<<<< HEAD
+            logger.info("✅ arabic json file converted into documents")
+            return docs_ar
+        logger.warning("⚠️ empty arabic documents")
+=======
             logger.info(f"✅ arabic json file converted into documents")
             return docs_ar
         logger.warning(f"⚠️ empty arabic documents")
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
     else:
         for article in articles:
 
@@ -87,14 +120,35 @@ def convert_json_to_docs(articles,lang):
             doc_en.append(doc)
 
         if doc_en:  
+<<<<<<< HEAD
+            logger.info("✅ english json file converted into documents")
+            return doc_en
+        logger.warning("⚠️ empty english documents")
+=======
             logger.info(f"✅ english json file converted into documents")
             return doc_en
         logger.warning(f"⚠️ empty english documents")
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 
 
 # loading embedding 
 
 def load_embeddings(model_name : str):
+<<<<<<< HEAD
+    """ Loading the embedded model from a local ONNX model directory  """
+    try:
+        logger.info(f"🚀 start loading the embedded model in path {model_name}")
+
+        embeddings = FastEmbedEmbeddings(model_name=model_name,)
+
+        if embeddings:
+            logger.info(f"✅ embedded model in path {model_name} loaded ")
+            return embeddings
+        
+        logger.warning(f"⚠️ i can't load embedded model from path {model_name}")
+    except Exception:
+        logger.exception(f"error when loading embedded model from path {model_name}")
+=======
     """ loading the embedded model  """
     try:
         logger.info(f"🚀 start loading the embedded model {model_name}")
@@ -118,6 +172,7 @@ def load_embeddings(model_name : str):
         logger.warning(f"⚠️ i can't load embedded model {model_name}")
     except Exception:
         logger.exception(f"error when loading embedded model {model_name}")
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
         raise
 
 
@@ -164,4 +219,8 @@ if __name__ == "__main__":
         Create_vector_store(settings.VECTOR_STORE_EN,docs_en,embeddings)
 
     except Exception:
+<<<<<<< HEAD
+        logger.exception("❌failed to ingest data")
+=======
         logger.exception(f"❌failed to ingest data")
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992

@@ -53,7 +53,10 @@ coverage.xml
 # ==========================================
 .env
 .env.*
+<<<<<<< HEAD
 configs/.env
+=======
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 !.env.example
 *.pem
 *.key

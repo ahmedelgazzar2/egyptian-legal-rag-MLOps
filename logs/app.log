@@ -10128,6 +10128,7 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-10-10 18:34:51,798 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
 2026-10-10 18:34:51,798 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_ar 
 2026-10-10 18:34:51,798 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+<<<<<<< HEAD
 2026-10-11 09:27:04,871 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
 2026-10-11 09:27:04,892 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
 2026-10-11 09:27:38,101 | ERROR | Egyptian_legal_rag.data.ingest | error when loading embedded model sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
@@ -11818,3 +11819,5 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-10-12 11:46:09,955 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
 2026-10-12 11:46:09,955 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\Egyptian-legal-rag\data\vector_store_en 
 2026-10-12 11:46:09,955 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+=======
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992

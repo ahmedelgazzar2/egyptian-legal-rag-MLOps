@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+<<<<<<< HEAD
 
     container_name: egyptian_legal_rag_api
 
@@ -23,6 +24,18 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       
+=======
+    container_name: egyptian_legal_rag_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      # 🔴 ربط مجلد data المحلي بمجلد /app/data داخل الحاوية
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+      # يمكنك إضافة أي متغيرات بيئة إضافية هنا مستقبلاً
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
       # - OPENAI_API_KEY=${OPENAI_API_KEY}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]

@@ -1,10 +1,19 @@
 # generator.py
 import logging
+<<<<<<< HEAD
 
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 
 from Egyptian_legal_rag.config.settings import settings
+=======
+from Egyptian_legal_rag.utils.logging_config import setup_logging
+from Egyptian_legal_rag.config.settings import settings 
+
+from langchain_groq import ChatGroq
+from langchain_core.prompts import ChatPromptTemplate
+
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 
 # logger
 

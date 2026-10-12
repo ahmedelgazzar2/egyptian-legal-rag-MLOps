@@ -20,11 +20,14 @@ Requires-Dist: python-dotenv
 Requires-Dist: langdetect
 Requires-Dist: pydantic_settings
 Requires-Dist: optimum[onnxruntime]>=2.1.0
+<<<<<<< HEAD
 Requires-Dist: pyarrow>=16.0.0
 Requires-Dist: onnxruntime>=1.24.3
 Requires-Dist: datasets>=2.20.0
 Requires-Dist: accelerate>=1.15.0
 Requires-Dist: fastembed
+=======
+>>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: pytest-asyncio; extra == "dev"

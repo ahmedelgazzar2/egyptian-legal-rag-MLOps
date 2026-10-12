@@ -1,5 +1,5 @@
 # ==========================================
-# 1. environment variables
+# 1. Environment & Python Caches
 # ==========================================
 .venv/
 venv/
@@ -11,7 +11,7 @@ __pycache__/
 *.so
 
 # ==========================================
-# 2. (uv/pip) build tools
+# 2. Build Tools & Package Managers
 # ==========================================
 .uv/
 build/
@@ -25,7 +25,7 @@ eggs/
 *.egg
 
 # ==========================================
-# 3. test code
+# 3. Testing, Linting & Coverage
 # ==========================================
 tests/
 .pytest_cache/
@@ -38,7 +38,7 @@ htmlcov/
 coverage.xml
 
 # ==========================================
-# 4.(IDE & Git)
+# 4. IDEs, Git & CI/CD
 # ==========================================
 .git/
 .gitignore
@@ -49,26 +49,24 @@ coverage.xml
 *.swo
 
 # ==========================================
-# 5. (Secrets)
+# 5. Secrets & Local Configs
 # ==========================================
 .env
 .env.*
-<<<<<<< HEAD
 configs/.env
-=======
->>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 !.env.example
 *.pem
 *.key
 
 # ==========================================
-# 6. temp files inside (data)
+# 6. Data & Large Model Artifacts
 # ==========================================
+data/
 data/**/*.tmp
 data/**/*.log
 
 # ==========================================
-# 7. logs and Documentation files
+# 7. Logs & Temporary Documentation
 # ==========================================
 *.md
 !README.md

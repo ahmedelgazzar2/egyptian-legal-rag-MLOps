@@ -5,15 +5,24 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+
     container_name: egyptian_legal_rag_api
+
     restart: unless-stopped
+
     ports:
       - "8000:8000"
+
     volumes:
       # connect data folder from /data from container
       - ./data:/app/data
+
+    env_file:
+      - .env
+
     environment:
       - PYTHONUNBUFFERED=1
+      
       # - OPENAI_API_KEY=${OPENAI_API_KEY}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]

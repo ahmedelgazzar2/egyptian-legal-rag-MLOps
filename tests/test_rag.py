@@ -1,18 +1,10 @@
 #test_rag.py
-<<<<<<< HEAD
 from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
 from fastapi.testclient import TestClient
 
 from Egyptian_legal_rag.api.main import app
-=======
-import pytest
-from fastapi.testclient import TestClient
-from unittest.mock import MagicMock , AsyncMock, patch
-from Egyptian_legal_rag.api.main import app
-
->>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 from Egyptian_legal_rag.rag.retrieval import load_retrieval
 
 # Fixtures & Mocks

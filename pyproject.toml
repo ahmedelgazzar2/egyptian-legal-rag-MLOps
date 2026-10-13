@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "egyptian-legal-rag"
 version = "0.1.0"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "fastapi",
     "uvicorn",
@@ -24,9 +24,9 @@ dependencies = [
     "python-dotenv",
     "langdetect",
     "pydantic_settings",
-    "optimum[onnxruntime]>=2.1.0",
+    "optimum>=2.1.0",
     "pyarrow>=16.0.0",
-    "onnxruntime>=1.24.3",
+    "onnxruntime>=1.16.0",
     "datasets>=2.20.0",
     "accelerate>=1.15.0",
     "fastembed",
@@ -53,3 +53,17 @@ dev = [
     "pytest>=9.1.1",
     "pytest-asyncio>=1.4.0",
 ]
+
+[tool.uv]
+environments = [
+    "sys_platform == 'linux' and python_version == '3.11'"
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+torchvision = [{ index = "pytorch-cpu" }]

@@ -11821,3 +11821,351 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-10-12 11:46:09,955 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
 =======
 >>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
+2026-10-13 08:41:08,469 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 08:41:08,470 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 08:41:11,706 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-10-13 08:41:11,916 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,133 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/tree/faf4aa4225822f3bc6376869cb1164e8e3feedd0?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,365 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/revision/main "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,578 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/tree/faf4aa4225822f3bc6376869cb1164e8e3feedd0?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,790 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/model_optimized.onnx "HTTP/1.1 302 Found"
+2026-10-13 08:41:12,791 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 08:41:12,840 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/tokenizer.json "HTTP/1.1 302 Found"
+2026-10-13 08:41:12,841 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 08:41:12,841 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 08:41:12,842 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 08:41:12,854 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fconfig.json=&etag=%225b496dbbbe502a10e2d64525481c6f444d125403%22 "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,854 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/tokenizer_config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Ftokenizer_config.json=&etag=%226af3e8bba20e4425103afb1ae3dee3cacdbe7afb%22 "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,857 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/special_tokens_map.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fspecial_tokens_map.json=&etag=%22b1879d702821e753ffe4245048eee415d54a9385%22 "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,866 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fconfig.json=&etag=%225b496dbbbe502a10e2d64525481c6f444d125403%22 "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,867 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/tokenizer_config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Ftokenizer_config.json=&etag=%226af3e8bba20e4425103afb1ae3dee3cacdbe7afb%22 "HTTP/1.1 200 OK"
+2026-10-13 08:41:12,869 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/special_tokens_map.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fspecial_tokens_map.json=&etag=%22b1879d702821e753ffe4245048eee415d54a9385%22 "HTTP/1.1 200 OK"
+2026-10-13 08:41:13,059 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/xet-read-token/faf4aa4225822f3bc6376869cb1164e8e3feedd0 "HTTP/1.1 200 OK"
+2026-10-13 08:41:18,602 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 08:41:18,602 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 08:41:18,602 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-13 08:41:18,602 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 08:41:18,602 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 08:41:18,612 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-13 08:41:18,612 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-13 08:41:18,612 | INFO | faiss.loader | Loading faiss.
+2026-10-13 08:41:18,928 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-13 08:41:19,106 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 08:41:19,106 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 08:41:19,106 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-13 08:41:19,106 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 08:41:19,106 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 08:41:21,149 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 08:41:21,149 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 08:41:21,149 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-13 08:41:21,149 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 08:41:21,149 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 08:41:21,250 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 08:41:21,250 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 08:41:21,250 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-13 08:41:21,250 | INFO | Egyptian_legal_rag.rag.generator | 🔄 openai/gpt-oss-20b loading 
+2026-10-13 08:41:21,447 | INFO | Egyptian_legal_rag.rag.generator | ✅ openai/gpt-oss-20b loaded successfully
+2026-10-13 08:41:21,447 | INFO | Egyptian_legal_rag.rag.generator | ✅ return prompt template 
+2026-10-13 08:41:21,447 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 08:41:23,061 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 08:41:23,061 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 08:41:23,136 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 08:41:23,136 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 08:41:23,143 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 08:41:23,862 | INFO | Egyptian_legal_rag.api.main | ✅ Health check requested
+2026-10-13 08:41:23,863 | INFO | httpx2 | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-10-13 08:41:23,873 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-13 08:41:23,874 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-13 08:41:23,874 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-13 08:41:23,883 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-13 08:41:23,883 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-13 08:41:23,883 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-13 08:41:23,894 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 08:41:23,921 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 08:41:23,948 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 08:41:23,954 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 08:41:23,955 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 08:41:25,311 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 08:41:25,312 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 08:41:25,312 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-13 08:41:25,312 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 08:41:25,313 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 08:41:25,321 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 08:41:25,321 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 08:41:25,321 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-13 08:41:25,626 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 08:41:25,626 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 08:41:26,671 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 08:41:26,672 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 08:41:26,672 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-13 08:41:26,672 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 08:41:26,672 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 08:41:26,678 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 08:41:26,678 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 08:41:26,678 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-13 14:16:46,286 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:16:46,286 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:16:48,482 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q "HTTP/1.1 200 OK"
+2026-10-13 14:16:48,697 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/tree/faf4aa4225822f3bc6376869cb1164e8e3feedd0?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 14:16:48,920 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/revision/main "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,144 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/tree/faf4aa4225822f3bc6376869cb1164e8e3feedd0?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,357 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/model_optimized.onnx "HTTP/1.1 302 Found"
+2026-10-13 14:16:49,357 | WARNING | huggingface_hub.utils._http | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-13 14:16:49,398 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 14:16:49,408 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 14:16:49,411 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fconfig.json=&etag=%225b496dbbbe502a10e2d64525481c6f444d125403%22 "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,411 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/resolve/faf4aa4225822f3bc6376869cb1164e8e3feedd0/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 14:16:49,421 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/tokenizer_config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Ftokenizer_config.json=&etag=%226af3e8bba20e4425103afb1ae3dee3cacdbe7afb%22 "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,422 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/special_tokens_map.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fspecial_tokens_map.json=&etag=%22b1879d702821e753ffe4245048eee415d54a9385%22 "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,426 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fconfig.json=&etag=%225b496dbbbe502a10e2d64525481c6f444d125403%22 "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,435 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/special_tokens_map.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Fspecial_tokens_map.json=&etag=%22b1879d702821e753ffe4245048eee415d54a9385%22 "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,437 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/resolve-cache/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/faf4aa4225822f3bc6376869cb1164e8e3feedd0/tokenizer_config.json?%2FQdrant%2Fparaphrase-multilingual-MiniLM-L12-v2-onnx-Q%2Fresolve%2Ffaf4aa4225822f3bc6376869cb1164e8e3feedd0%2Ftokenizer_config.json=&etag=%226af3e8bba20e4425103afb1ae3dee3cacdbe7afb%22 "HTTP/1.1 200 OK"
+2026-10-13 14:16:49,443 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/Qdrant/paraphrase-multilingual-MiniLM-L12-v2-onnx-Q/xet-read-token/faf4aa4225822f3bc6376869cb1164e8e3feedd0 "HTTP/1.1 200 OK"
+2026-10-13 14:16:54,568 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:16:54,568 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:16:54,568 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-13 14:16:54,568 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:16:54,568 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:16:54,577 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-13 14:16:54,577 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-13 14:16:54,577 | INFO | faiss.loader | Loading faiss.
+2026-10-13 14:16:54,875 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-13 14:16:55,051 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:16:55,051 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:16:55,051 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-13 14:16:55,051 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:16:55,051 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:16:56,768 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:16:56,768 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:16:56,769 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-13 14:16:56,769 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:16:56,769 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:16:56,904 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:16:56,904 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:16:56,904 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-13 14:16:56,905 | INFO | Egyptian_legal_rag.rag.generator | 🔄 openai/gpt-oss-20b loading 
+2026-10-13 14:16:57,120 | INFO | Egyptian_legal_rag.rag.generator | ✅ openai/gpt-oss-20b loaded successfully
+2026-10-13 14:16:57,120 | INFO | Egyptian_legal_rag.rag.generator | ✅ return prompt template 
+2026-10-13 14:16:57,121 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:16:58,601 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:16:58,602 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:16:58,621 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:16:58,621 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:16:58,627 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:16:59,330 | INFO | Egyptian_legal_rag.api.main | ✅ Health check requested
+2026-10-13 14:16:59,331 | INFO | httpx2 | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-10-13 14:16:59,339 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-13 14:16:59,339 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-13 14:16:59,340 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-13 14:16:59,348 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-13 14:16:59,348 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-13 14:16:59,348 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-13 14:16:59,459 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 14:16:59,466 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 14:16:59,474 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 14:16:59,476 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:16:59,477 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:17:00,648 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:17:00,649 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:17:00,649 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-13 14:17:00,650 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:00,650 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:00,656 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:00,656 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:00,658 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-13 14:17:01,064 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:17:01,065 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:17:02,210 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:17:02,210 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:17:02,211 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-13 14:17:02,211 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:17:02,211 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:17:02,219 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:17:02,219 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:17:02,219 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-13 14:17:45,116 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:17:45,116 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:17:47,142 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:17:47,142 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:17:47,142 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-13 14:17:47,142 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:47,142 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:47,143 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-13 14:17:47,144 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-13 14:17:47,144 | INFO | faiss.loader | Loading faiss.
+2026-10-13 14:17:47,163 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-13 14:17:47,172 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:47,172 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:47,172 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-13 14:17:47,173 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:17:47,173 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:17:48,549 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:17:48,549 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:17:48,549 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-13 14:17:48,549 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:17:48,549 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:17:48,554 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:17:48,554 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:17:48,555 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-13 14:17:48,555 | INFO | Egyptian_legal_rag.rag.generator | 🔄 openai/gpt-oss-20b loading 
+2026-10-13 14:17:48,644 | INFO | Egyptian_legal_rag.rag.generator | ✅ openai/gpt-oss-20b loaded successfully
+2026-10-13 14:17:48,644 | INFO | Egyptian_legal_rag.rag.generator | ✅ return prompt template 
+2026-10-13 14:17:48,644 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:17:50,054 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:17:50,055 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:50,060 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:50,060 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:50,064 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:50,728 | INFO | Egyptian_legal_rag.api.main | ✅ Health check requested
+2026-10-13 14:17:50,729 | INFO | httpx2 | HTTP Request: GET http://testserver/health "HTTP/1.1 200 OK"
+2026-10-13 14:17:50,736 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-13 14:17:50,736 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-13 14:17:50,737 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-13 14:17:50,743 | INFO | Egyptian_legal_rag.api.main | ℹ️ recieve a question
+2026-10-13 14:17:50,743 | INFO | Egyptian_legal_rag.api.main | ✅ recieve a question
+2026-10-13 14:17:50,744 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 200 OK"
+2026-10-13 14:17:50,750 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 14:17:50,758 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 14:17:50,764 | INFO | httpx2 | HTTP Request: POST http://testserver/ask "HTTP/1.1 422 Unprocessable Content"
+2026-10-13 14:17:50,767 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:17:50,767 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:17:51,960 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:17:51,960 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:17:51,960 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-13 14:17:51,960 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:51,960 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:17:51,964 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:51,965 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:17:51,965 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-13 14:17:52,224 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-13 14:17:52,224 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:17:53,266 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:17:53,267 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-13 14:17:53,267 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-13 14:17:53,267 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:17:53,267 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:17:53,272 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:17:53,273 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:17:53,273 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-13 14:19:52,806 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:19:52,806 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:19:52,806 | ERROR | __main__ | ❌ error , can't load file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+Traceback (most recent call last):
+  File "/workspaces/egyptian-legal-rag-MLOps/src/Egyptian_legal_rag/data/ingest.py", line 25, in load_json
+    with open(path, 'r', encoding='utf-8') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json'
+2026-10-13 14:19:52,807 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:19:52,807 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:19:52,807 | ERROR | __main__ | ❌ error , can't load file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+Traceback (most recent call last):
+  File "/workspaces/egyptian-legal-rag-MLOps/src/Egyptian_legal_rag/data/ingest.py", line 25, in load_json
+    with open(path, 'r', encoding='utf-8') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json'
+2026-10-13 14:19:52,808 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-13 14:19:52,808 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-13 14:19:52,808 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-13 14:19:52,808 | ERROR | __main__ | ❌failed to ingest data
+Traceback (most recent call last):
+  File "/workspaces/egyptian-legal-rag-MLOps/src/Egyptian_legal_rag/data/ingest.py", line 144, in <module>
+    docs_ar = convert_json_to_docs(arabic_articles,lang='ar')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/egyptian-legal-rag-MLOps/src/Egyptian_legal_rag/data/ingest.py", line 49, in convert_json_to_docs
+    for article in articles:
+TypeError: 'NoneType' object is not iterable
+2026-10-13 14:23:11,827 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:23:11,827 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:23:11,828 | ERROR | __main__ | ❌ error , can't load file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+Traceback (most recent call last):
+  File "/workspaces/egyptian-legal-rag-MLOps/src/Egyptian_legal_rag/data/ingest.py", line 25, in load_json
+    with open(path, 'r', encoding='utf-8') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json'
+2026-10-13 14:23:11,829 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:23:11,829 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:23:11,829 | ERROR | __main__ | ❌ error , can't load file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+Traceback (most recent call last):
+  File "/workspaces/egyptian-legal-rag-MLOps/src/Egyptian_legal_rag/data/ingest.py", line 25, in load_json
+    with open(path, 'r', encoding='utf-8') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json'
+2026-10-13 14:23:11,830 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-13 14:23:11,830 | INFO | __main__ | ⚠️ Warning: No articles found for language 'ar'. Check your input JSON data file path.
+2026-10-13 14:23:11,830 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-13 14:23:11,831 | INFO | __main__ | ⚠️ Warning: No articles found for language 'en'. Check your input JSON data file path.
+2026-10-13 14:23:11,831 | ERROR | __main__ | ❌failed to ingest data
+Traceback (most recent call last):
+  File "/workspaces/egyptian-legal-rag-MLOps/src/Egyptian_legal_rag/data/ingest.py", line 149, in <module>
+    print("arabic document type",docs_ar[0])
+                                 ~~~~~~~^^^
+IndexError: list index out of range
+2026-10-13 14:25:35,659 | INFO | __main__ | 🔄 Loading PDF: /workspaces/egyptian-legal-rag-MLOps/data/raw/egyptian-civil-code.pdf
+2026-10-13 14:25:49,023 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-13 14:25:49,065 | INFO | __main__ | english articles extracted ✅ 
+2026-10-13 14:25:49,081 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-13 14:25:49,082 | INFO | __main__ | extract articles with metadata ✅
+2026-10-13 14:25:49,084 | INFO | __main__ | extract articles with metadata ✅
+2026-10-13 14:25:49,095 | INFO | __main__ | ✅ Saved 997 articles to /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:25:49,107 | INFO | __main__ | ✅ Saved 1070 articles to /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:26:33,458 | INFO | __main__ | 🔄 Loading PDF: /workspaces/egyptian-legal-rag-MLOps/data/raw/egyptian-civil-code.pdf
+2026-10-13 14:26:46,479 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-13 14:26:46,561 | INFO | __main__ | english articles extracted ✅ 
+2026-10-13 14:26:46,575 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-13 14:26:46,577 | INFO | __main__ | extract articles with metadata ✅
+2026-10-13 14:26:46,578 | INFO | __main__ | extract articles with metadata ✅
+2026-10-13 14:26:46,590 | INFO | __main__ | ✅ Saved 997 articles to /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:26:46,602 | INFO | __main__ | ✅ Saved 1070 articles to /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:26:47,726 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:26:47,726 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:26:47,731 | INFO | __main__ | ✅ json file loaded well from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json with length 997
+2026-10-13 14:26:47,731 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:26:47,732 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:26:47,736 | INFO | __main__ | ✅ json file loaded well from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json with length 1070
+2026-10-13 14:26:47,737 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-13 14:26:47,737 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-13 14:26:47,737 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-13 14:26:47,744 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-13 14:26:47,744 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-13 14:26:47,751 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-13 14:26:47,752 | INFO | __main__ | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:26:49,882 | INFO | __main__ | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:26:49,882 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:28:17,532 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-13 14:28:17,533 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-13 14:28:17,533 | INFO | faiss.loader | Loading faiss.
+2026-10-13 14:28:17,574 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-13 14:28:17,625 | INFO | __main__ | ✅ vector store created for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:28:17,634 | INFO | __main__ | ✅ Saving vector store locally at PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:28:17,634 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:29:50,202 | INFO | __main__ | ✅ vector store created for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:29:50,214 | INFO | __main__ | ✅ Saving vector store locally at PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:34:14,256 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:34:14,256 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json
+2026-10-13 14:34:14,261 | INFO | __main__ | ✅ json file loaded well from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-ar.json with length 997
+2026-10-13 14:34:14,261 | INFO | __main__ | 🚀 starting loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:34:14,261 | INFO | __main__ | 🔄 loading json file from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json
+2026-10-13 14:34:14,265 | INFO | __main__ | ✅ json file loaded well from /workspaces/egyptian-legal-rag-MLOps/data/proccessed/egyptian-civil-code-en.json with length 1070
+2026-10-13 14:34:14,265 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-13 14:34:14,265 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-13 14:34:14,265 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-13 14:34:14,269 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-13 14:34:14,269 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-13 14:34:14,274 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-13 14:34:14,276 | INFO | __main__ | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-13 14:34:16,156 | INFO | __main__ | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-13 14:34:16,156 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
+2026-10-13 14:35:42,923 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-13 14:35:42,924 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-13 14:35:42,925 | INFO | faiss.loader | Loading faiss.
+2026-10-13 14:35:42,970 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-13 14:35:43,012 | INFO | __main__ | ✅ vector store created for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:35:43,019 | INFO | __main__ | ✅ Saving vector store locally at PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-13 14:35:43,019 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en
+2026-10-13 14:37:14,775 | INFO | __main__ | ✅ vector store created for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 
+2026-10-13 14:37:14,787 | INFO | __main__ | ✅ Saving vector store locally at PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_en 

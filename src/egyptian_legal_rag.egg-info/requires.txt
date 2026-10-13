@@ -15,15 +15,12 @@ dvc
 python-dotenv
 langdetect
 pydantic_settings
-optimum[onnxruntime]>=2.1.0
-<<<<<<< HEAD
+optimum>=2.1.0
 pyarrow>=16.0.0
-onnxruntime>=1.24.3
+onnxruntime>=1.16.0
 datasets>=2.20.0
 accelerate>=1.15.0
 fastembed
-=======
->>>>>>> 2a1af8cdf4b8dad8ad79eb06b22353a1b5e1d992
 
 [dev]
 pytest

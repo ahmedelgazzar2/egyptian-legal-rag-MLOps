@@ -1,6 +1,6 @@
 
 services:
-  legal-rag-api:
+  egyptian-legal-rag-api:
     build:
       context: .
       dockerfile: Dockerfile

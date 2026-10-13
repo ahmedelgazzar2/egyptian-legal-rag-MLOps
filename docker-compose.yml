@@ -1,7 +1,6 @@
-version: '3.8'
 
 services:
-  legal-rag-api:
+  egyptian-legal-rag-api:
     build:
       context: .
       dockerfile: Dockerfile

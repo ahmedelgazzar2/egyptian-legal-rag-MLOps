@@ -7,29 +7,31 @@ name = "egyptian-legal-rag"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
+     # API 
     "fastapi",
     "uvicorn",
     "pydantic",
+    "pydantic-settings",
+
+    # LangChain 
     "langchain",
     "langchain-community",
     "langchain-groq",
     "langchain-core",
-    "langchain-huggingface",
+
+    #  Vector Store 
     "faiss-cpu",
-    "sentence-transformers",
+
+    #  Embeddings 
+    "fastembed",
+    "onnxruntime",
+
+    #  PDF 
     "pypdf",
-    "mlflow",
-    "ragas",
-    "dvc",
+
+    # Utils 
     "python-dotenv",
     "langdetect",
-    "pydantic_settings",
-    "optimum>=2.1.0",
-    "pyarrow>=16.0.0",
-    "onnxruntime>=1.16.0",
-    "datasets>=2.20.0",
-    "accelerate>=1.15.0",
-    "fastembed",
 ]
 
 [project.optional-dependencies]
@@ -40,6 +42,19 @@ dev = [
     "ruff",         
     "black",        
     "pre-commit",   
+]
+
+eval = [
+    "mlflow",
+    "ragas",
+    "datasets",
+    "pyarrow",
+]
+
+data = [
+    "dvc",
+    "optimum>=2.1.0",
+    "accelerate>=1.15.0",
 ]
 
 [tool.setuptools.packages.find]
@@ -65,5 +80,6 @@ url = "https://download.pytorch.org/whl/cpu"
 explicit = true
 
 [tool.uv.sources]
-torch = [{ index = "pytorch-cpu" }]
-torchvision = [{ index = "pytorch-cpu" }]
+torch = { index = "pytorch-cpu" }
+torchaudio = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }

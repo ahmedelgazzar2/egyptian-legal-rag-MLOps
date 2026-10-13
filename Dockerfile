@@ -16,11 +16,12 @@ ENV PYTHONUNBUFFERED=1 \
 COPY pyproject.toml uv.lock README.md ./
 COPY src/ ./src/
 
-# 2. تثبيت الحزم والمشروع، ثم حذف ملفات NVIDIA/Triton الضخمة
+# 2. تثبيت الحزم بدون محاذاة الكاش المؤقت وحذف حزم GPU/Triton فوراً
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev && \
     rm -rf /app/.venv/lib/python3.11/site-packages/nvidia* && \
-    rm -rf /app/.venv/lib/python3.11/site-packages/triton*
+    rm -rf /app/.venv/lib/python3.11/site-packages/triton* && \
+    rm -rf /root/.cache/uv/*
 
 # ==========================================
 # Stage 2: Runtime Image (Minimal & Secure)
@@ -46,7 +47,7 @@ ENV PYTHONUNBUFFERED=1 \
     HF_HOME="/home/appuser/.cache/huggingface" \
     FASTEMBED_CACHE_PATH="/home/appuser/.cache/fastembed"
 
-# نقل البيئة والكود
+# نقل البيئة والكود للمستخدم الآمن
 COPY --from=builder --chown=appuser:appuser /app/.venv /app/.venv
 COPY --chown=appuser:appuser src/ ./src/
 

@@ -5,9 +5,9 @@ stages:
     deps:
     - path: data/raw
       hash: md5
-      md5: 81d6d2f6d356fc6c7ab87b288588d606.dir
-      size: 2599703
-      nfiles: 1
+      md5: 719e5cb20b0e20032ca0df21c784542c.dir
+      size: 2599814
+      nfiles: 2
     - path: src/Egyptian_legal_rag/data/extract.py
       hash: md5
       md5: 07227d3d44704549a0f026669b617b6e

@@ -12544,3 +12544,24 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-10-14 20:48:10,092 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
 2026-10-14 20:48:41,580 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
 2026-10-14 20:48:41,586 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 21:45:21,606 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\raw\egyptian-civil-code.pdf
+2026-10-14 21:45:21,612 | ERROR | __main__ | ❌ Failed to load PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\raw\egyptian-civil-code.pdf
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\src\Egyptian_legal_rag\data\extract.py", line 28, in load_pdf
+    raise FileNotFoundError(f"❌ PDF not found: {file_path}")
+FileNotFoundError: ❌ PDF not found: D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\raw\egyptian-civil-code.pdf
+2026-10-14 21:45:21,613 | ERROR | __main__ | ❌ error, can't extract articles
+Traceback (most recent call last):
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\src\Egyptian_legal_rag\data\extract.py", line 174, in <module>
+    pages = load_pdf(settings.PDF_DIR)
+  File "D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\src\Egyptian_legal_rag\data\extract.py", line 28, in load_pdf
+    raise FileNotFoundError(f"❌ PDF not found: {file_path}")
+FileNotFoundError: ❌ PDF not found: D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\raw\egyptian-civil-code.pdf
+2026-10-14 21:47:21,043 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\raw\egyptian-civil-code.pdf
+2026-10-14 21:47:37,203 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-14 21:47:37,269 | INFO | __main__ | english articles extracted ✅ 
+2026-10-14 21:47:37,284 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-14 21:47:37,286 | INFO | __main__ | extract articles with metadata ✅
+2026-10-14 21:47:37,288 | INFO | __main__ | extract articles with metadata ✅
+2026-10-14 21:47:37,310 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 21:47:37,321 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json

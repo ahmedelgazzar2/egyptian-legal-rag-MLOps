@@ -31,9 +31,9 @@ jobs:
           uv sync --all-extras --dev
           uv pip install -e .
 
-      - name: Pull DVC-tracked data
-        run: |
-          uv run dvc pull
+      # - name: Pull DVC-tracked data
+      #   run: |
+      #     uv run dvc pull
 
       - name: Rebuild Index / Re-ingest Corpus (DVC Repro)
         run: |

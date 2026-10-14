@@ -10,40 +10,40 @@ stages:
       nfiles: 1
     - path: src/Egyptian_legal_rag/data/extract.py
       hash: md5
-      md5: 4d82b3088c71c000a36b93ef5789c66f
-      size: 5712
+      md5: 07227d3d44704549a0f026669b617b6e
+      size: 5768
     outs:
     - path: data/proccessed/egyptian-civil-code-ar.json
       hash: md5
-      md5: e047a62650a8ca33154d2d6ad768f2b5
-      size: 467070
+      md5: de32cbd36872ad6b6297718231bae5d8
+      size: 472056
     - path: data/proccessed/egyptian-civil-code-en.json
       hash: md5
-      md5: f9608ed98b44a42dccea607423280d98
-      size: 441899
+      md5: 8e2c1b5117eb9440493d1140f6a0c72b
+      size: 447250
   ingest:
     cmd: python src/Egyptian_legal_rag/data/ingest.py
     deps:
     - path: data/proccessed/egyptian-civil-code-ar.json
       hash: md5
-      md5: e047a62650a8ca33154d2d6ad768f2b5
-      size: 467070
+      md5: de32cbd36872ad6b6297718231bae5d8
+      size: 472056
     - path: data/proccessed/egyptian-civil-code-en.json
       hash: md5
-      md5: f9608ed98b44a42dccea607423280d98
-      size: 441899
+      md5: 8e2c1b5117eb9440493d1140f6a0c72b
+      size: 447250
     - path: src/Egyptian_legal_rag/data/ingest.py
       hash: md5
-      md5: c8f50a476b69a4d73d4790ee41f78be9
-      size: 5106
+      md5: a5c5c9ae1498a4a13195b6cb605931fb
+      size: 5338
     outs:
     - path: data/vector_store_ar
       hash: md5
-      md5: 8afc1c7d9d23447092b39380a963eced.dir
+      md5: bfe39eb3b26477ba50874af16e0b6ae8.dir
       size: 2063052
       nfiles: 2
     - path: data/vector_store_en
       hash: md5
-      md5: 7eae456592b41d8d1710356287560b94.dir
+      md5: 476c6b8e583c441d154bb0cace0c0cfd.dir
       size: 2153457
       nfiles: 2

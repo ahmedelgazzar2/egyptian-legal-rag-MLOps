@@ -11,11 +11,8 @@ def setup_logging():
         level=logging.INFO,
         format="%(asctime)s | %(levelname)s | %(name)s | %(message)s",
         handlers=[
-            logging.FileHandler(
-                log_dir / "app.log",
-                encoding="utf-8"
-            ),
-            logging.StreamHandler()
+            logging.FileHandler(log_dir / "app.log", encoding="utf-8"),
+            logging.StreamHandler(),
         ],
-        force=True
+        force=True,
     )

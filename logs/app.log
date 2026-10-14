@@ -12398,3 +12398,66 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-10-14 06:45:09,656 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
 2026-10-14 06:45:09,657 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar
 2026-10-14 06:45:09,667 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH /workspaces/egyptian-legal-rag-MLOps/data/vector_store_ar 
+2026-10-14 10:48:04,460 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-14 10:48:04,460 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 10:48:08,548 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 10:48:08,549 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-14 10:48:08,549 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-14 10:48:08,549 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:08,549 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:08,571 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-14 10:48:08,571 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-14 10:48:08,571 | INFO | faiss.loader | Loading faiss.
+2026-10-14 10:48:08,971 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-14 10:48:09,044 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 10:48:09,044 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 10:48:09,060 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-14 10:48:09,060 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-14 10:48:09,061 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 10:48:10,214 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 10:48:10,214 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-14 10:48:10,215 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-14 10:48:10,215 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
+2026-10-14 10:48:10,215 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
+2026-10-14 10:48:10,225 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 10:48:10,225 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 10:48:10,226 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-14 10:48:10,226 | INFO | Egyptian_legal_rag.rag.generator | 🔄 openai/gpt-oss-20b loading 
+2026-10-14 10:48:11,643 | INFO | Egyptian_legal_rag.rag.generator | ✅ openai/gpt-oss-20b loaded successfully
+2026-10-14 10:48:11,644 | INFO | Egyptian_legal_rag.rag.generator | ✅ return prompt template 
+2026-10-14 10:48:11,644 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 10:48:13,388 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 10:48:13,389 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:13,395 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 10:48:13,396 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:13,404 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 10:48:13,460 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-14 10:48:13,460 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 10:48:14,957 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 10:48:14,958 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-14 10:48:14,958 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to arabic path
+2026-10-14 10:48:14,958 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:14,958 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:14,970 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 10:48:14,970 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 10:48:14,973 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return arabic retrieval successfully
+2026-10-14 10:48:14,973 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading embedding model
+2026-10-14 10:48:14,973 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 10:48:16,479 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 10:48:16,479 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ embedded model loaded successfuly
+2026-10-14 10:48:16,480 | INFO | Egyptian_legal_rag.rag.retrieval | ℹ️ go to english path
+2026-10-14 10:48:16,480 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
+2026-10-14 10:48:16,480 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
+2026-10-14 10:48:16,715 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 10:48:16,715 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 10:48:16,715 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ return English retrieval successfully
+2026-10-14 10:48:16,715 | INFO | Egyptian_legal_rag.rag.generator | 🔄 openai/gpt-oss-20b loading 
+2026-10-14 10:48:17,290 | INFO | Egyptian_legal_rag.rag.generator | ✅ openai/gpt-oss-20b loaded successfully
+2026-10-14 10:48:17,291 | INFO | Egyptian_legal_rag.rag.generator | ✅ return prompt template 
+2026-10-14 10:48:17,291 | INFO | Egyptian_legal_rag.data.ingest | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 10:48:18,407 | INFO | Egyptian_legal_rag.data.ingest | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 10:48:18,407 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:18,435 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 10:48:18,436 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 10:48:18,442 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 

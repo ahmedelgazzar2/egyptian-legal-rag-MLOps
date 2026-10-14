@@ -12461,3 +12461,86 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-10-14 10:48:18,435 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
 2026-10-14 10:48:18,436 | INFO | Egyptian_legal_rag.rag.retrieval | 🔄 start loading vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
 2026-10-14 10:48:18,442 | INFO | Egyptian_legal_rag.rag.retrieval | ✅ vector store loaded from PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 20:42:23,414 | INFO | __main__ | 🔄 Loading PDF: D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\raw\egyptian-civil-code.pdf
+2026-10-14 20:42:40,387 | INFO | __main__ | ✅ PDF loaded successfully | pages=170
+2026-10-14 20:42:40,458 | INFO | __main__ | english articles extracted ✅ 
+2026-10-14 20:42:40,474 | INFO | __main__ | arabic articles extracted ✅ 
+2026-10-14 20:42:40,476 | INFO | __main__ | extract articles with metadata ✅
+2026-10-14 20:42:40,478 | INFO | __main__ | extract articles with metadata ✅
+2026-10-14 20:42:40,487 | INFO | __main__ | ✅ Saved 997 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 20:42:40,499 | INFO | __main__ | ✅ Saved 1070 articles to D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json
+2026-10-14 20:42:43,772 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 20:42:43,773 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 20:42:43,777 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json with length 997
+2026-10-14 20:42:43,777 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json
+2026-10-14 20:42:43,777 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json
+2026-10-14 20:42:43,780 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json with length 1070
+2026-10-14 20:42:43,781 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-14 20:42:43,781 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-14 20:42:43,781 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-14 20:42:43,787 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-14 20:42:43,787 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-14 20:42:43,791 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-14 20:42:43,791 | INFO | __main__ | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 20:42:45,342 | INFO | __main__ | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 20:42:45,342 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 20:43:18,375 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-14 20:43:18,380 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-14 20:43:18,380 | INFO | faiss.loader | Loading faiss.
+2026-10-14 20:43:18,977 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-14 20:43:19,083 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 20:43:19,111 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 20:43:19,111 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
+2026-10-14 20:43:51,388 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 20:43:51,393 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 20:45:10,679 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 20:45:10,679 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 20:45:10,683 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json with length 997
+2026-10-14 20:45:10,683 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json
+2026-10-14 20:45:10,684 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json
+2026-10-14 20:45:10,690 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json with length 1070
+2026-10-14 20:45:10,690 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-14 20:45:10,690 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-14 20:45:10,691 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-14 20:45:10,694 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-14 20:45:10,694 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-14 20:45:10,698 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-14 20:45:10,699 | INFO | __main__ | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 20:45:12,039 | INFO | __main__ | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 20:45:12,039 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 20:45:41,378 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-14 20:45:41,378 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-14 20:45:41,378 | INFO | faiss.loader | Loading faiss.
+2026-10-14 20:45:41,401 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-14 20:45:41,426 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 20:45:41,432 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 20:45:41,433 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
+2026-10-14 20:46:12,331 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 20:46:12,336 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 20:47:39,073 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 20:47:39,073 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json
+2026-10-14 20:47:39,077 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-ar.json with length 997
+2026-10-14 20:47:39,077 | INFO | __main__ | 🚀 starting loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json
+2026-10-14 20:47:39,077 | INFO | __main__ | 🔄 loading json file from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json
+2026-10-14 20:47:39,082 | INFO | __main__ | ✅ json file loaded well from D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\proccessed\egyptian-civil-code-en.json with length 1070
+2026-10-14 20:47:39,083 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-14 20:47:39,083 | INFO | __main__ | ℹ️ arabic language detected 
+2026-10-14 20:47:39,083 | INFO | __main__ | 🚀 start converting arabic json files into documents
+2026-10-14 20:47:39,087 | INFO | __main__ | ✅ arabic json file converted into documents
+2026-10-14 20:47:39,087 | INFO | __main__ | 🚀 starting converting json file to documents
+2026-10-14 20:47:39,091 | INFO | __main__ | ✅ english json file converted into documents
+2026-10-14 20:47:39,092 | INFO | __main__ | 🚀 start loading the embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-10-14 20:47:40,220 | INFO | __main__ | ✅ embedded model in path sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 loaded 
+2026-10-14 20:47:40,220 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar
+2026-10-14 20:48:09,648 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-10-14 20:48:09,648 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-10-14 20:48:09,648 | INFO | faiss.loader | Loading faiss.
+2026-10-14 20:48:10,015 | INFO | faiss.loader | Successfully loaded faiss.
+2026-10-14 20:48:10,061 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 20:48:10,092 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_ar 
+2026-10-14 20:48:10,092 | INFO | __main__ | 🚀 start creating vector store using FAISS for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en
+2026-10-14 20:48:41,580 | INFO | __main__ | ✅ vector store created for PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 
+2026-10-14 20:48:41,586 | INFO | __main__ | ✅ Saving vector store locally at PATH D:\Users\AlrassPOS\Downloads\New folder (2)\python\New folder\egyptian-legal-rag-MLOps\data\vector_store_en 

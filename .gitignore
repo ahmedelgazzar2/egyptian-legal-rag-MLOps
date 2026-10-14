@@ -10,7 +10,6 @@ src/*.egg-info/
 logs/
 .venv/
 # Model & Vector Stores
-data/onnx_model/
-data/model_cache/
-# data/vector_store_
-*.onnx
+/data/raw/*
+!/data/raw/*.dvc
+!/data/.gitignore

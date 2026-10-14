@@ -12,16 +12,18 @@ ENV PYTHONUNBUFFERED=1 \
     UV_COMPILE_BYTECODE=1 \
     UV_LINK_MODE=copy
 
-# 1. نسخ ملفات التكوين والكود المصدر لبناء الحزمة بالكامل
 COPY pyproject.toml uv.lock README.md ./
 COPY src/ ./src/
 
-# 2. تثبيت الحزم بدون محاذاة الكاش المؤقت وحذف حزم GPU/Triton فوراً
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev && \
     rm -rf /app/.venv/lib/python3.11/site-packages/nvidia* && \
     rm -rf /app/.venv/lib/python3.11/site-packages/triton* && \
     rm -rf /root/.cache/uv/*
+
+# ✅ حمل الـ model وقت الـ build
+ENV FASTEMBED_CACHE_PATH="/root/.cache/fastembed"
+RUN /app/.venv/bin/python -c "from fastembed import TextEmbedding; list(TextEmbedding('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2').embed(['test'])); print('Model downloaded')"
 
 # ==========================================
 # Stage 2: Runtime Image (Minimal & Secure)
@@ -47,9 +49,13 @@ ENV PYTHONUNBUFFERED=1 \
     HF_HOME="/home/appuser/.cache/huggingface" \
     FASTEMBED_CACHE_PATH="/home/appuser/.cache/fastembed"
 
-# نقل البيئة والكود للمستخدم الآمن
-COPY --from=builder --chown=appuser:appuser /app/.venv /app/.venv
+COPY --from=builder --chown=appuser:appuser /app/.venv  /app/.venv
+COPY --from=builder --chown=appuser:appuser /root/.cache/fastembed /home/appuser/.cache/fastembed
 COPY --chown=appuser:appuser src/ ./src/
+
+# ✅ نسخ الـ vector stores
+COPY --chown=appuser:appuser data/vector_store_ar ./data/vector_store_ar
+COPY --chown=appuser:appuser data/vector_store_en ./data/vector_store_en
 
 USER appuser
 
@@ -58,7 +64,6 @@ EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -fsS http://localhost:8000/health || exit 1
 
-# تشغيل uvicorn مع توجيهه لـ src
 CMD ["uvicorn", "Egyptian_legal_rag.api.main:app", \
      "--app-dir", "src", \
      "--host", "0.0.0.0", \

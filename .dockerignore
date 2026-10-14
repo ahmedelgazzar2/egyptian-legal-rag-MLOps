@@ -61,7 +61,8 @@ configs/.env
 # ==========================================
 # 6. Data & Large Model Artifacts
 # ==========================================
-data/
+data/raw/
+data/processed/
 data/**/*.tmp
 data/**/*.log
 

@@ -42,9 +42,6 @@ def convert_json_to_docs(articles,lang):
     logger.info("🚀 starting converting json file to documents")
     docs_ar = []
     doc_en = []
-    if not articles:
-        logger.info(f"⚠️ Warning: No articles found for language '{lang}'. Check your input JSON data file path.")
-        return []
 
     if lang == "ar":
         logger.info("ℹ️ arabic language detected ")
@@ -101,7 +98,7 @@ def load_embeddings(model_name : str):
     try:
         logger.info(f"🚀 start loading the embedded model in path {model_name}")
 
-        embeddings = FastEmbedEmbeddings(model_name=model_name)
+        embeddings = FastEmbedEmbeddings(model_name=model_name,)
 
         if embeddings:
             logger.info(f"✅ embedded model in path {model_name} loaded ")
@@ -139,6 +136,12 @@ def Create_vector_store(path,docs,embeddings):
 
 if __name__ == "__main__":
 
+    from fastembed import TextEmbedding
+
+    models = TextEmbedding.list_supported_models()
+    for model in models:
+        if 'multilingual' in model['model'].lower() or 'arabic' in model['model'].lower():
+            print(model['model'])
     setup_logging()
     try:
         arabic_articles = load_json(settings.JSON_AR)

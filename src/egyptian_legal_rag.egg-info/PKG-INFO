@@ -5,26 +5,17 @@ Requires-Python: >=3.11
 Requires-Dist: fastapi
 Requires-Dist: uvicorn
 Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
 Requires-Dist: langchain
 Requires-Dist: langchain-community
 Requires-Dist: langchain-groq
 Requires-Dist: langchain-core
-Requires-Dist: langchain-huggingface
 Requires-Dist: faiss-cpu
-Requires-Dist: sentence-transformers
+Requires-Dist: fastembed
+Requires-Dist: onnxruntime
 Requires-Dist: pypdf
-Requires-Dist: mlflow
-Requires-Dist: ragas
-Requires-Dist: dvc
 Requires-Dist: python-dotenv
 Requires-Dist: langdetect
-Requires-Dist: pydantic_settings
-Requires-Dist: optimum>=2.1.0
-Requires-Dist: pyarrow>=16.0.0
-Requires-Dist: onnxruntime>=1.16.0
-Requires-Dist: datasets>=2.20.0
-Requires-Dist: accelerate>=1.15.0
-Requires-Dist: fastembed
 Provides-Extra: dev
 Requires-Dist: pytest; extra == "dev"
 Requires-Dist: pytest-asyncio; extra == "dev"
@@ -32,3 +23,12 @@ Requires-Dist: httpx; extra == "dev"
 Requires-Dist: ruff; extra == "dev"
 Requires-Dist: black; extra == "dev"
 Requires-Dist: pre-commit; extra == "dev"
+Provides-Extra: eval
+Requires-Dist: mlflow; extra == "eval"
+Requires-Dist: ragas; extra == "eval"
+Requires-Dist: datasets; extra == "eval"
+Requires-Dist: pyarrow; extra == "eval"
+Provides-Extra: data
+Requires-Dist: dvc; extra == "data"
+Requires-Dist: optimum>=2.1.0; extra == "data"
+Requires-Dist: accelerate>=1.15.0; extra == "data"

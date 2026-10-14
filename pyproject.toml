@@ -69,10 +69,10 @@ dev = [
     "pytest-asyncio>=1.4.0",
 ]
 
-[tool.uv]
-environments = [
-    "sys_platform == 'linux' and python_version == '3.11'"
-]
+# [tool.uv]
+# environments = [
+#     "sys_platform == 'linux' and python_version == '3.11'"
+# ]
 
 [[tool.uv.index]]
 name = "pytorch-cpu"

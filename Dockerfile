@@ -21,7 +21,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
     rm -rf /app/.venv/lib/python3.11/site-packages/triton* && \
     rm -rf /root/.cache/uv/*
 
-# ✅ حمل الـ model وقت الـ build
+# download embedding model while build
 ENV FASTEMBED_CACHE_PATH="/root/.cache/fastembed"
 RUN /app/.venv/bin/python -c "from fastembed import TextEmbedding; list(TextEmbedding('sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2').embed(['test'])); print('Model downloaded')"
 
@@ -53,7 +53,7 @@ COPY --from=builder --chown=appuser:appuser /app/.venv  /app/.venv
 COPY --from=builder --chown=appuser:appuser /root/.cache/fastembed /home/appuser/.cache/fastembed
 COPY --chown=appuser:appuser src/ ./src/
 
-# ✅ نسخ الـ vector stores
+# copy vector store
 COPY --chown=appuser:appuser data/vector_store_ar ./data/vector_store_ar
 COPY --chown=appuser:appuser data/vector_store_en ./data/vector_store_en
 

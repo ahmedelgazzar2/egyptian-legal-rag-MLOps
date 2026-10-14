@@ -25,7 +25,6 @@ class Settings(BaseSettings):
 
     # Models
     EMBEDDING_MODEL: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-    # EMBEDDING_MODEL: str = DATA_DIR / "onnx_model"
     LLM_MODEL: str = "openai/gpt-oss-20b"
 
     # RAG

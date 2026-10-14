@@ -10,15 +10,16 @@ from Egyptian_legal_rag.config.settings import settings
 
 logger = logging.getLogger(__name__)
 
+
 def load_LLM(model):
-    """ this is a function to load my llm """
+    """this is a function to load my llm"""
 
     try:
         logger.info(f"🔄 {model} loading ")
         llm = ChatGroq(
             model=settings.LLM_MODEL,
             api_key=settings.GROQ_API_KEY,
-            temperature = 0,
+            temperature=0,
         )
 
         if llm:
@@ -30,10 +31,9 @@ def load_LLM(model):
 
 
 def get_prompt() -> str:
-    """ this is a function to get a prompt template """
+    """this is a function to get a prompt template"""
 
-    prompt = ChatPromptTemplate.from_template(
-        """
+    prompt = ChatPromptTemplate.from_template("""
             You are an expert AI Legal Assistant specialized in analyzing and interpreting the Egyptian Civil Code.
 
             ### OBJECTIVE:
@@ -60,10 +60,7 @@ def get_prompt() -> str:
             {input}
 
             Answer:
-        """
-    )
+        """)
 
     logger.info("✅ return prompt template ")
     return prompt
-
-    

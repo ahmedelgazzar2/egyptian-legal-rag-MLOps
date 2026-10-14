@@ -62,6 +62,11 @@ where = ["src"]
 
 [tool.ruff]
 line-length = 88
+exclude = ["notebooks", "nootbooks"]
+
+[tool.ruff.lint] 
+# to allow to depends function inside fastapi
+ignore = ["B008" , "N999"]
 
 [dependency-groups]
 dev = [

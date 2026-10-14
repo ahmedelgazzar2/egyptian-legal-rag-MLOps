@@ -1,25 +1,26 @@
-#src/Egyptian_legal_rag/config/settings.py
+# src/Egyptian_legal_rag/config/settings.py
 from pathlib import Path
+
 from pydantic_settings import BaseSettings
 
 _HERE = Path(__file__).resolve().parent  # config/
-_ROOT = _HERE.parent.parent.parent # root
+_ROOT = _HERE.parent.parent.parent  # root
+
 
 class Settings(BaseSettings):
 
-    #  Project 
+    #  Project
     ROOT_DIR: Path = _ROOT
 
-    # Data 
+    # Data
     DATA_DIR: Path = ROOT_DIR / "data"
     PDF_DIR: Path = DATA_DIR / "raw" / "egyptian-civil-code.pdf"
     VECTOR_STORE_AR: Path = DATA_DIR / "vector_store_ar"
     VECTOR_STORE_EN: Path = DATA_DIR / "vector_store_en"
     JSON_AR: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-ar.json"
     JSON_EN: Path = DATA_DIR / "proccessed" / "egyptian-civil-code-en.json"
-    EMBEDDING_MODEL: str = "./data/onnx_model"
 
-    #  API Keys 
+    #  API Keys
     GROQ_API_KEY: str
 
     # Models
@@ -27,9 +28,9 @@ class Settings(BaseSettings):
     # EMBEDDING_MODEL: str = DATA_DIR / "onnx_model"
     LLM_MODEL: str = "openai/gpt-oss-20b"
 
-    # RAG 
+    # RAG
     TOP_K: int = 5
-    SEARCH_TYPE : str = "similarity"
+    SEARCH_TYPE: str = "similarity"
 
     model_config = {
         "env_file": str(_ROOT / ".env"),  # root/.env

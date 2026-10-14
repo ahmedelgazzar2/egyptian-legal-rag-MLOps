@@ -20,63 +20,52 @@ logger = logging.getLogger(__name__)
 
 class RagPipeline:
     def __init__(self):
-        self.retriever_ar    = load_retrieval("ar")
-        self.retriever_en    = load_retrieval("en")
-        self.llm             = load_LLM(settings.LLM_MODEL)
-        self.prompt          = get_prompt()
-        self.embeddings      = load_embeddings(settings.EMBEDDING_MODEL)
-        self.vector_store_ar = load_vector_store(settings.VECTOR_STORE_AR,self.embeddings)
-        self.vector_store_en = load_vector_store(settings.VECTOR_STORE_AR,self.embeddings)
+        self.retriever_ar = load_retrieval("ar")
+        self.retriever_en = load_retrieval("en")
+        self.llm = load_LLM(settings.LLM_MODEL)
+        self.prompt = get_prompt()
+        self.embeddings = load_embeddings(settings.EMBEDDING_MODEL)
+        self.vector_store_ar = load_vector_store(
+            settings.VECTOR_STORE_AR, self.embeddings
+        )
+        self.vector_store_en = load_vector_store(
+            settings.VECTOR_STORE_AR, self.embeddings
+        )
 
     @property
     def document_count(self) -> int:
-        """ getting the number of indexing documents """
+        """getting the number of indexing documents"""
 
-        n_documents = self.vector_store_ar.index.ntotal + self.vector_store_en.index.ntotal
+        n_documents = (
+            self.vector_store_ar.index.ntotal + self.vector_store_en.index.ntotal
+        )
         return n_documents
-       
-    
-    def _get_retiever(self,question : str):
+
+    def _get_retiever(self, question: str):
         lang = detect(question)
 
-        if lang == 'ar':
+        if lang == "ar":
             logger.info("ℹ️ arabic language detected and return arabic retriever")
             return self.retriever_ar
         else:
             logger.info("ℹ️ english language detected and return english retriever")
             return self.retriever_en
 
-    def _format_docs(self,docs):
-        return "\n\n".join([
+    def _format_docs(self, docs):
+        return "\n\n".join(
+            [
                 f"Article {doc.metadata['article_number']}:\n{doc.page_content}"
                 for doc in docs
-            ])
+            ]
+        )
 
-
-    # def _get_chain(self,question : str):
-        
-    #     try:
-    #         retrieval = self._get_retiever(question)
-
-    #         chain = (
-    #                 {"context": retrieval | self._format_docs, "input": RunnablePassthrough()}
-    #                 | self.prompt
-    #                 | self.llm
-    #                 | StrOutputParser()
-    #             )
-
-    #         logger.info("✅ chain returns successfully ")
-    #         return chain
-    #     except Exception:
-    #         logger.exception("❌ error , there is an error while returnning chain ")
-
-    async def ask(self,question : str) -> dict:
+    async def ask(self, question: str) -> dict:
 
         retriever = self._get_retiever(question)
         docs = retriever.invoke(question)
-        #context = self._format_docs(docs)
+        # context = self._format_docs(docs)
 
-        if not retriever or not docs :
+        if not retriever or not docs:
             logger.error("❌ error while loading retriever or docs or context")
 
         chain = (
@@ -93,17 +82,10 @@ class RagPipeline:
         if answer:
             logger.info("✅ llm generate answer successfully")
 
-        sources = list(set([
-                f"Article {doc.metadata['article_number']}"
-                for doc in docs
-            ]))
+        sources = list({f"Article {doc.metadata['article_number']}" for doc in docs})
+        sources = set(sources)
         if sources:
             logger.info("✅ sources loaded successfully")
 
-
         logger.info("✅ return answer meta data")
-        return {
-            "question": question,
-            "answer":   answer,
-            "sources":  sources
-        }
+        return {"question": question, "answer": answer, "sources": sources}

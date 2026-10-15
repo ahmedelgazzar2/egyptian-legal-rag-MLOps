@@ -31,13 +31,10 @@ jobs:
           uv sync --all-extras --dev
           uv pip install -e .
 
-      # - name: Pull DVC-tracked data
-      #   run: |
-      #     uv run dvc pull
 
       - name: Rebuild Index / Re-ingest Corpus (DVC Repro)
         run: |
-          uv run dvc repro || uv run python -m Egyptian_legal_rag.data.ingest
+          uv run dvc repro || uv run python -m Egyptian_legal_rag.data.ingest.py
 
 
       - name: Run Linters (Ruff & Black)

@@ -7,6 +7,9 @@ src/Egyptian_legal_rag/config/settings.py
 src/Egyptian_legal_rag/data/extract.py
 src/Egyptian_legal_rag/data/ingest.py
 src/Egyptian_legal_rag/evaluation/ml_flow.py
+src/Egyptian_legal_rag/evaluation/ragas_eval.py
+src/Egyptian_legal_rag/evaluation/schemas.py
+src/Egyptian_legal_rag/evaluation/config/config.py
 src/Egyptian_legal_rag/rag/Ragpipeline.py
 src/Egyptian_legal_rag/rag/__init__.py
 src/Egyptian_legal_rag/rag/generator.py

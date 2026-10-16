@@ -14,7 +14,6 @@ from Egyptian_legal_rag.rag.retrieval import load_retrieval
 def mock_rag():
     """a mock RagPipeline instance"""
     with patch("Egyptian_legal_rag.api.main.RagPipeline") as mock:
-
         instance = MagicMock()
 
         instance.ask = AsyncMock(

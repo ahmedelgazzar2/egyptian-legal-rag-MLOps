@@ -51,7 +51,7 @@ def convert_json_to_docs(articles, lang):
         logger.info("ℹ️ arabic language detected ")
         logger.info("🚀 start converting arabic json files into documents")
         for article in articles:
-            combined_text = f"مادة {article['article_number']}\n" f"{article['text']}"
+            combined_text = f"مادة {article['article_number']}\n{article['text']}"
 
             doc = Document(
                 page_content=combined_text,
@@ -69,10 +69,7 @@ def convert_json_to_docs(articles, lang):
         logger.warning("⚠️ empty arabic documents")
     else:
         for article in articles:
-
-            combined_text = (
-                f"Article {article['article_number']}\n" f"{article['text']}"
-            )
+            combined_text = f"Article {article['article_number']}\n{article['text']}"
 
             doc = Document(
                 page_content=combined_text,
@@ -137,7 +134,6 @@ def Create_vector_store(path, docs, embeddings):
 
 
 if __name__ == "__main__":
-
     from fastembed import TextEmbedding
 
     models = TextEmbedding.list_supported_models()

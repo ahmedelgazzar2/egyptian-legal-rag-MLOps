@@ -168,7 +168,6 @@ def save_json(articles, output_path):
 
 
 if __name__ == "__main__":
-
     setup_logging()
     try:
         pages = load_pdf(settings.PDF_DIR)

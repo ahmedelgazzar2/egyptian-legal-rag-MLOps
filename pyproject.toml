@@ -47,8 +47,8 @@ dev = [
 eval = [
     "mlflow",
     "ragas",
-    "datasets",
-    "pyarrow",
+    "datasets>=3.0.0",
+    "pyarrow>=17.0.0",
 ]
 
 data = [
@@ -56,6 +56,9 @@ data = [
     "optimum>=2.1.0",
     "accelerate>=1.15.0",
 ]
+
+[tool.uv.extra-build-dependencies]
+pyarrow = ["pkg_resources", "setuptools"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

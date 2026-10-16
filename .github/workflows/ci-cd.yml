@@ -31,13 +31,10 @@ jobs:
           uv sync --all-extras --dev
           uv pip install -e .
 
-      # - name: Pull DVC-tracked data
-      #   run: |
-      #     uv run dvc pull
 
       - name: Rebuild Index / Re-ingest Corpus (DVC Repro)
         run: |
-          uv run dvc repro || uv run python -m Egyptian_legal_rag.data.ingest
+          uv run dvc repro || uv run python -m Egyptian_legal_rag.data.ingest.py
 
 
       - name: Run Linters (Ruff & Black)
@@ -60,6 +57,25 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Project & Dependencies
+        run: |
+          uv sync --all-extras --dev
+          uv pip install -e .
+
+      - name: Run DVC Repro to generate vector stores for Docker
+        run: |
+          uv run dvc repro
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3

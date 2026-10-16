@@ -1,4 +1,12 @@
 [core]
-    remote = myremote
+    remote = local_storage
 ['remote "myremote"']
     url = /tmp/dvc-storage
+['remote "storage"']
+    url = gdrive://1oVUzMWVnpdytIxE79qPxrEkKDgFu-39B
+    gdrive_use_service_account = true
+    gdrive_acknowledge_abuse = true
+    gdrive_service_account_json_file_path = D:/Users/AlrassPOS/Downloads/computer-company-489401-25d93f5fa032.json
+    gdrive_service_account_user_email = dvc-drive@computer-company-489401.iam.gserviceaccount.com
+['remote "local_storage"']
+    url = D:\Users\AlrassPOS\Downloads\dvc

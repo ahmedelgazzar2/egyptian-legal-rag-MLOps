@@ -1372,7 +1372,7 @@ requires-dist = [
     { name = "onnxruntime" },
     { name = "optimum", marker = "extra == 'data'", specifier = ">=2.1.0" },
     { name = "pre-commit", marker = "extra == 'dev'" },
-    { name = "pyarrow", marker = "extra == 'eval'", specifier = "==16.1.0" },
+    { name = "pyarrow", marker = "extra == 'eval'", specifier = "<21.0.0" },
     { name = "pydantic" },
     { name = "pydantic-settings" },
     { name = "pypdf" },

@@ -30,4 +30,4 @@ pre-commit
 mlflow
 ragas
 datasets
-pyarrow==16.1.0
+pyarrow<21.0.0

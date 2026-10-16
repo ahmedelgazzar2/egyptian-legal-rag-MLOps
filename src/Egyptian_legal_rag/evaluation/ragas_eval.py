@@ -13,18 +13,17 @@ os.environ["OPENAI_API_KEY"] = "sk-dummy-key-not-needed"
 os.environ["OPENAI_API_BASE"] = "http://localhost:9999/v1"  # عنوان وهمي يمنع إرسال أي طلب حقيقي للخارج
 
 import logging
-import pandas as pd
+
 from datasets import Dataset
-from langchain_groq import ChatGroq
+from ragas import evaluate
+from ragas.embeddings import HuggingFaceEmbeddings
+from ragas.llms import LangchainLLMWrapper
+from ragas.metrics import AnswerRelevancy, ContextPrecision, ContextRecall, Faithfulness
+
+from Egyptian_legal_rag.config.settings import settings
 from Egyptian_legal_rag.evaluation.config.config import eval_data
-from Egyptian_legal_rag.config.settings import settings 
-from Egyptian_legal_rag.data.ingest import load_embeddings
 from Egyptian_legal_rag.rag.generator import load_LLM
 
-from ragas import evaluate
-from ragas.llms import LangchainLLMWrapper
-from ragas.embeddings import HuggingFaceEmbeddings
-from ragas.metrics import Faithfulness, AnswerRelevancy,ContextPrecision, ContextRecall
 # from ragas.metrics.collections import (
 #     answer_relevancy,
 #     context_precision,
@@ -93,7 +92,7 @@ if __name__ == "__main__":
     result = evaluate_results(eval_data, evaluator_llm, embedding_model)
     
     if result:
-        logging.info("✅ evaluate_results work well")
-        logging.info(result)
+        logger.info("✅ evaluate_results work well")
+        logger.info(result)
     else:  
-        logging.error("❌ failed to evaluate data")
+        logger.error("❌ failed to evaluate data")

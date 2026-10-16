@@ -9,7 +9,6 @@ class RAGResult:
     ground_truth: str
 
 
-
 @dataclass(frozen=True)
 class RAGConfig:
     chunk_size: str

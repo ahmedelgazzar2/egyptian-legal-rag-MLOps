@@ -10,7 +10,9 @@ import os
 
 # 💡 قطع الاتصال نهائياً بأي سيرفر لـ OpenAI وخداع المكتبة
 os.environ["OPENAI_API_KEY"] = "sk-dummy-key-not-needed"
-os.environ["OPENAI_API_BASE"] = "http://localhost:9999/v1"  # عنوان وهمي يمنع إرسال أي طلب حقيقي للخارج
+os.environ["OPENAI_API_BASE"] = (
+    "http://localhost:9999/v1"  # عنوان وهمي يمنع إرسال أي طلب حقيقي للخارج
+)
 
 import logging
 
@@ -44,7 +46,10 @@ logger = logging.getLogger(__name__)
 #     ContextRecall(llm=evaluator_llm),
 # ]
 
-def evaluate_results(records: list[dict], evaluator_llm, evaluator_embeddings) -> dict[str, float]:
+
+def evaluate_results(
+    records: list[dict], evaluator_llm, evaluator_embeddings
+) -> dict[str, float]:
     """
     Each record must contain:
         question, answer, contexts, ground_truth
@@ -62,13 +67,13 @@ def evaluate_results(records: list[dict], evaluator_llm, evaluator_embeddings) -
     ]
 
     dataset = Dataset.from_list(records)
-    
+
     result = evaluate(
         dataset=dataset,
         metrics=metrics,
         llm=evaluator_llm,
         embeddings=evaluator_embeddings,
-    )       
+    )
 
     scores = result.to_pandas()
 
@@ -82,6 +87,7 @@ def evaluate_results(records: list[dict], evaluator_llm, evaluator_embeddings) -
         ]
     }
 
+
 if __name__ == "__main__":
     llm = load_LLM(settings.LLM_MODEL)
     logger.info("✅ model loaded")
@@ -90,9 +96,9 @@ if __name__ == "__main__":
     embedding_model = HuggingFaceEmbeddings(model=settings.EMBEDDING_MODEL)
 
     result = evaluate_results(eval_data, evaluator_llm, embedding_model)
-    
+
     if result:
         logger.info("✅ evaluate_results work well")
         logger.info(result)
-    else:  
+    else:
         logger.error("❌ failed to evaluate data")

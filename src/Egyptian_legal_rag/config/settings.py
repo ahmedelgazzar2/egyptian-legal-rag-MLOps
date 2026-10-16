@@ -8,7 +8,6 @@ _ROOT = _HERE.parent.parent.parent  # root
 
 
 class Settings(BaseSettings):
-
     #  Project
     ROOT_DIR: Path = _ROOT
 

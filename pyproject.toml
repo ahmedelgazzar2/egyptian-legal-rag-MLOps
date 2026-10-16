@@ -48,7 +48,7 @@ eval = [
     "mlflow",
     "ragas",
     "datasets",
-    "pyarrow",
+    "pyarrow<21.0.0",
 ]
 
 data = [
